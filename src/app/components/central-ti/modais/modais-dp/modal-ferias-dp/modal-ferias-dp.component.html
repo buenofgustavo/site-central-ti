@@ -1,0 +1,35 @@
+<form class="form-grid">
+    <div class="div-cadastro" style="justify-content: center; display: flex; width: 100%; ">
+        <nb-form-field style="flex: 1;">
+            <label for="tipoSolicitacao">Tipo de Solicitação</label>
+            <input disabled class="todos-inputs" id="tipoSolicitacao" nbInput name="tipoSolicitacao">
+        </nb-form-field>
+    </div>
+    <div class="center-content">
+      <nb-form-field style="flex: 1;">
+          <label for="filial">Colaboradores</label>
+          <nb-select placeholder="" name="perfis">
+              <nb-option value="">Nenhum</nb-option>
+          </nb-select>
+      </nb-form-field>
+      <button nbButton style="margin-top: 34px; margin-left: 10px;">
+          <nb-icon icon="search"></nb-icon>
+      </button>
+        <label for="nb-checkbox" style="margin-left: 40px;display: flex; top: -20px; margin-right: -18px; margin-top: 34px;">Desativar acessos:</label>
+        <nb-checkbox id="nb-checkbox" style="margin-top: 38px; margin-left: 40px; transform: scale(1.7);" status="basic"></nb-checkbox>
+    </div>
+
+    <nb-card-body class="data">
+      <div class="input-row">
+        <div class="input-group">
+          <label for="dataini">Data de Início:</label>
+          <input class="dataini" nbInput for="dataini" placeholder="" [nbDatepicker]="formcontrol" [formControl]="formControl">
+          <nb-datepicker #formcontrol></nb-datepicker>
+        </div>
+        
+        <div class="input-group">
+          <label class="labeldatafim" for="datafim">Data final:</label>
+          <input class="datafim" for="datafim" nbInput placeholder="" [nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate">
+          <nb-datepicker #ngmodel></nb-datepicker>
+        </div>
+      </div>

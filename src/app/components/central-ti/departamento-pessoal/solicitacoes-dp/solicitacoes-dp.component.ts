@@ -4,6 +4,11 @@ import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { NbWindowService } from '@nebular/theme';
+import { ModalCadastroUsuarioDpComponent } from '../../modais/modais-dp/modal-cadastro-usuario-dp/modal-cadastro-usuario-dp.component';
+import { ModalFeriasDpComponent } from '../../modais/modais-dp/modal-ferias-dp/modal-ferias-dp.component';
+
+
 
 interface STATUS {
   value: number;
@@ -18,6 +23,11 @@ interface TableColoboradores {
 }
 
 interface Colaboradores {
+  value: number;
+  viewValue: string;
+}
+
+interface Tipos {
   value: number;
   viewValue: string;
 }
@@ -77,6 +87,13 @@ export class SolicitacoesDpComponent {
     { value: 2, viewValue: 'Concluído' },
     { value: 3, viewValue: 'Fechado' },
   ];
+
+  tipos: Tipos[] = [
+    { value: 0, viewValue: 'Cadastro de Usuário' },
+    { value: 1, viewValue: 'Férias' },
+    { value: 2, viewValue: 'Desligamento' },
+    { value: 3, viewValue: 'Mudança de Cargo' },
+  ];
   
   colaboradores: Colaboradores[] = [
     { value: 0, viewValue: 'Gustavo' },
@@ -87,6 +104,10 @@ export class SolicitacoesDpComponent {
     { value: 5, viewValue: 'Ítalo' },
   ]
 
+  constructor(private windowService: NbWindowService) {}
+
+  openWindow() {
+    this.windowService.open(ModalFeriasDpComponent, { title: `Window` });
+  }
+
 }
-
-

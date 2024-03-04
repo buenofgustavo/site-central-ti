@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { NbDatepickerModule } from '@nebular/theme'; // Importe o NbDatepickerModule
+import { NbDatepickerModule, NbWindowModule } from '@nebular/theme'; // Importe o NbDatepickerModule
 
 import {
   NbButtonModule,
@@ -38,6 +38,9 @@ import { GestaoPessoalComponent } from './components/central-ti/departamento-pes
 import { CadastrarFeriasComponent } from './components/central-ti/departamento-pessoal/gestao-pessoal/tipos-de-solicitacao/cadastrar-ferias/cadastrar-ferias.component';
 import { MudancaDeCargoComponent } from './components/central-ti/departamento-pessoal/gestao-pessoal/tipos-de-solicitacao/mudanca-de-cargo/mudanca-de-cargo.component';
 import { SolicitacoesDpComponent } from './components/central-ti/departamento-pessoal/solicitacoes-dp/solicitacoes-dp.component';
+import { ModalColaboradoresDpComponent } from './components/central-ti/modais/modais-dp/modal-colaboradores-dp/modal-colaboradores-dp.component';
+import { ModalCadastroUsuarioDpComponent } from './components/central-ti/modais/modais-dp/modal-cadastro-usuario-dp/modal-cadastro-usuario-dp.component';
+import { ModalFeriasDpComponent } from './components/central-ti/modais/modais-dp/modal-ferias-dp/modal-ferias-dp.component';
 
 @NgModule({
   declarations: [
@@ -50,13 +53,17 @@ import { SolicitacoesDpComponent } from './components/central-ti/departamento-pe
     GestaoPessoalComponent,
     CadastrarFeriasComponent,
     MudancaDeCargoComponent,
-    SolicitacoesDpComponent
+    SolicitacoesDpComponent,
+    ModalColaboradoresDpComponent,
+    ModalCadastroUsuarioDpComponent,
+    ModalFeriasDpComponent,
+    
   ],
   imports: [
     AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, BrowserModule, BrowserAnimationsModule, NbEvaIconsModule,
     NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputModule,NbLayoutModule,NbMenuModule.forRoot(),NbSelectModule,
     NbSidebarModule.forRoot(), NbStepperModule, NbThemeModule.forRoot({ name: 'default' }),NbUserModule,MatTableModule, NbContextMenuModule,
-    MatPaginatorModule,NbCheckboxModule,NbDatepickerModule.forRoot(),
+    MatPaginatorModule,NbCheckboxModule,NbDatepickerModule.forRoot(),NbWindowModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { ModalColaboradoresDpComponent } from '../../modais/modais-dp/modal-colaboradores-dp/modal-colaboradores-dp.component';
+import { NbWindowService } from '@nebular/theme';
 
 interface Departamentos {
   value: number;
@@ -64,7 +66,7 @@ const ELEMENT_DATA: TableColoboradores[] = [
   styleUrls: ['./colaboradores-dp.component.scss']
 })
 export class ColaboradoresDpComponent {
-  displayedColumns: string[] = ['nome', 'cpf', 'telefone', 'departamento'];
+  displayedColumns: string[] = ['nome', 'cpf', 'telefone', 'departamento', 'acao'];
   dataSource = new MatTableDataSource<TableColoboradores>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -101,5 +103,11 @@ export class ColaboradoresDpComponent {
     { value: 4, viewValue: 'Lucas' },
     { value: 5, viewValue: 'Ítalo' },
   ]
+
+  constructor(private windowService: NbWindowService) {}
+
+  openWindow() {
+    this.windowService.open(ModalColaboradoresDpComponent, { title: `Window` });
+  }
   
 }
