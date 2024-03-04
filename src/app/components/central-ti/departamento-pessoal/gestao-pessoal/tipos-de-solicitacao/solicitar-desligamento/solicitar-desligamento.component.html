@@ -1,0 +1,27 @@
+
+      <nb-card class="card-center">
+        <nb-card-header>
+          Solicitar Desligamento
+        </nb-card-header>
+        <nb-card-body>
+          <form class="form-grid">
+            <div class="center-content">
+              <nb-form-field style="flex: 1;">
+                  <label for="filial">Colaboradores</label>
+                  <nb-select placeholder="" name="perfis">
+                      <nb-option value="">Nenhum</nb-option>
+                      <nb-option *ngFor="let colaborador of colaboradores" [value]="colaborador.value">
+                          {{colaborador.viewValue}}
+                      </nb-option>
+                  </nb-select>
+              </nb-form-field>
+              <button nbButton style="margin-top: 49px; margin-left: 10px;">
+                  <nb-icon icon="search"></nb-icon>
+              </button>
+            </div>
+          </form>
+        </nb-card-body>
+        <nb-card-footer>
+          <button class="button" nbButton>Solicitar</button>
+        </nb-card-footer>
+      </nb-card>
