@@ -1,27 +1,69 @@
-<form class="form-grid">
-    <div class="center-content">
-        <nb-form-field>
-            <label for="nomeCompleto">Nome Completo</label>
-            <input disabled class="todos-inputs" id="nomeCompleto" nbInput name="nomeCompleto">
-          </nb-form-field>
-          <label for="nb-checkbox" style="display: flex; margin-top: 35px;  margin-left: 15px;">PJ:</label>
-          <nb-checkbox disabled id="nb-checkbox" style="transform: scale(1.3); margin-top: 35px; margin-left: 20px;" status="basic"></nb-checkbox>
-    </div>
-    <div class="">
-      <nb-form-field>
-        <label for="usuarioCargo">Novo Cargo</label>
-        <input disabled fullWidth class="todos-inputs" id="usuarioCargo" nbInput placeholder="" name="cargo">
-      </nb-form-field>
-    </div>
-    <div class="div-cadastro">
-    <nb-form-field class="form-field">
-        <label for="departamento">Departamento</label>
-        <input disabled id="usuarioDepartamento" nbInput placeholder="" name="departamento">
-      </nb-form-field>
-      <nb-form-field class="form-field">
-        <label for="filial">Filial</label>
-        <input disabled id="usuarioFilial" nbInput placeholder="" name="filial">
-      </nb-form-field>
-    </div>
 
-  </form>
+
+<div style="max-width: 780px; min-width: 780px; max-height: 448px; min-height: 448px;  background-color: white; overflow: hidden;">
+
+    <mat-tab-group>
+      <mat-tab label="Mudança de Cargo">
+  
+        <div style="margin-bottom: 18px; margin-top: 65px; margin-left: -8px;">
+  
+          <form class="form-grid">
+            <div class="center-content">
+                <nb-form-field>
+                    <label for="nomeCompleto">Nome Completo</label>
+                    <input disabled class="todos-inputs" id="nomeCompleto" nbInput name="nomeCompleto">
+                  </nb-form-field>
+                  <label for="nb-checkbox" style="display: flex; margin-top: 35px;  margin-left: 15px;">PJ:</label>
+                  <nb-checkbox disabled id="nb-checkbox" style="transform: scale(1.3); margin-top: 35px; margin-left: 20px;" status="basic"></nb-checkbox>
+            </div>
+            <div style="margin-left: 47px; margin-top: 8px;">
+              <nb-form-field>
+                <label for="usuarioCargo" style="display: block;">Novo Cargo</label>
+                <input style="width: 97%; display: block;" disabled fullWidth class="todos-inputs" id="usuarioCargo" nbInput placeholder="" name="cargo">
+              </nb-form-field>
+            </div>
+            <div style="margin-left: 47px;" class="div-cadastro">
+            <nb-form-field class="form-field">
+                <label for="departamento">Departamento</label>
+                <input disabled id="usuarioDepartamento" nbInput placeholder="" name="departamento">
+              </nb-form-field>
+              <nb-form-field class="form-field">
+                <label for="filial">Filial</label>
+                <input disabled id="usuarioFilial" nbInput placeholder="" name="filial">
+              </nb-form-field>
+            </div>
+        
+          </form>
+  
+        </div>
+  
+      </mat-tab >
+      <mat-tab label="Comentários">
+        <nb-card style="height: 400px;" > <!-- Defina uma altura máxima para o card -->
+          <nb-card-body style="overflow-y: auto;"> <!-- Adicione a propriedade overflow-y -->
+            <div *ngFor="let comentario of comentarios">
+              <nb-card>
+                <nb-card-body>
+                  <app-user-info [name]="'Gustavo Bueno'" [title]="'FullStack Developer'"></app-user-info>
+                  <div>
+                    <span>{{ comentario }}</span>
+                  </div>
+                </nb-card-body>
+              </nb-card>
+            </div>
+          </nb-card-body>
+      
+          <nb-card-footer>
+            <div style="display: flex; align-items: center;">
+              <input [disabled]="dados.status !== 'Em Aberto'" type="text" nbInput fullWidth class="input-comentario" fieldSize="giant" [(ngModel)]="mensagem" placeholder="Escreva sua mensagem">
+              <button [disabled]="dados.status !== 'Em Aberto'" style="margin-left: 20px;" nbButton status="basic" (click)="enviarMensagem()">
+                <nb-icon icon="paper-plane-outline"></nb-icon>
+              </button>
+            </div>
+          </nb-card-footer>
+        </nb-card>
+      </mat-tab>
+    </mat-tab-group>
+  
+  </div>
+  

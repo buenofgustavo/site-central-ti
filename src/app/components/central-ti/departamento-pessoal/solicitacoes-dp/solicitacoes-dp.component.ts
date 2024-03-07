@@ -9,6 +9,9 @@ import { ModalCadastroUsuarioDpComponent } from '../../modais/modais-dp/modal-ca
 import { ModalFeriasDpComponent } from '../../modais/modais-dp/modal-ferias-dp/modal-ferias-dp.component';
 import { ModalDesligamentoDpComponent } from '../../modais/modais-dp/modal-desligamento-dp/modal-desligamento-dp.component';
 import { ModalMudancaDeCargoDpComponent } from '../../modais/modais-dp/modal-mudanca-de-cargo-dp/modal-mudanca-de-cargo-dp.component';
+import { NbWindowConfig } from '@nebular/theme';
+import { MatDialog } from '@angular/material/dialog';
+
 
 
 
@@ -36,10 +39,14 @@ interface Tipos {
 
 
 const ELEMENT_DATA: TableColoboradores[] = [
-  {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "1.0079", requerente: 'H'},
+  {tipo: 'Cadastro de Usuário', status: 'Lithium', data_abertura: "1.0079", requerente: 'H'},
+  {tipo: 'Desligamento', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Férias', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Desligamento', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "4.0026", requerente: 'He'},
   {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
@@ -51,14 +58,11 @@ const ELEMENT_DATA: TableColoboradores[] = [
   {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: 'Mudança de Cargo', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
   {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
@@ -78,6 +82,8 @@ export class SolicitacoesDpComponent {
   dataSource = new MatTableDataSource<TableColoboradores>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  constructor(private dialog: MatDialog) {}
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -106,29 +112,46 @@ export class SolicitacoesDpComponent {
     { value: 5, viewValue: 'Ítalo' },
   ]
 
-  constructor(private windowService: NbWindowService) {}
-
-  openWindow(element: any) {
-    const status = element.tipo;
-    
-    switch (status) {
+  openDialog(element: any) {
+    const tipo = element.tipo;
+  
+    switch (tipo) {
       case 'Cadastro de Usuário':
-        this.windowService.open(ModalCadastroUsuarioDpComponent, { title: `Cadastro de Usuário` });
+        this.dialog.open(ModalCadastroUsuarioDpComponent, { 
+          data: { title: 'Cadastro de Usuário', dados: { ...element } }
+        });
         break;
       case 'Cadastro de Férias':
-        this.windowService.open(ModalFeriasDpComponent, { title: `Cadastro de Férias` });
+        this.dialog.open(ModalFeriasDpComponent, { 
+          data: { title: 'Cadastro de Férias', dados: { ...element } }
+        });
         break;
       case 'Desligamento':
-        this.windowService.open(ModalDesligamentoDpComponent, { title: `Desligamento` });
+        this.dialog.open(ModalDesligamentoDpComponent, { 
+          data: { title: 'Desligamento', dados: { ...element } }
+        });
         break;
       case 'Mudança de Cargo':
-        this.windowService.open(ModalMudancaDeCargoDpComponent, { title: `Mudança de Cargo` });
+        this.dialog.open(ModalMudancaDeCargoDpComponent, { 
+          data: { title: 'Mudança de Cargo', dados: { ...element } }
+        });
         break;
       default:
         // Handle cases where the status doesn't match any expected value
-        console.error(`Unexpected status: ${status}`);
+        console.error(`Unexpected status: ${tipo}`);
         break;
     }
   }
 
+  deleteRow(element: any) {
+    // Para excluir uma linha, você precisa encontrar o índice do elemento na fonte de dados
+    const index = this.dataSource.data.indexOf(element);
+    if (index !== -1) {
+      // Se o elemento existir, remova-o da fonte de dados
+      this.dataSource.data.splice(index, 1);
+      // Notifique a tabela sobre a mudança na fonte de dados
+      this.dataSource._updateChangeSubscription();
+    }
+  }
 }
+

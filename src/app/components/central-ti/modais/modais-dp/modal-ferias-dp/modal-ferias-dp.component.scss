@@ -64,23 +64,28 @@ nb-checkbox:not(:only-child) {
   margin-right: 10px; /* Ajuste a margem conforme necessário */
 }
 
-.input-row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.input-group {
-    margin-left: 10px;
-}
-
-.input-group label {
-  display: block;
-  margin-bottom: 0.5em;
-}
-
-
-
-
 .labeldatafim{
   margin-left: 4px;
+}
+
+.group,
+.input-row {
+    display: inline-block;
+    vertical-align: top; /* Alinhar os elementos ao topo */
+    margin-right: 20px; /* Espaçamento entre os elementos */
+}
+
+.group label,
+.input-row label {
+    display: block; /* Para que as labels ocupem toda a largura do elemento pai */
+}
+
+.group input,
+.input-row input {
+    width: 300px; /* Largura dos inputs */
+    padding: 5px;
+}
+
+.div-datas{
+  margin-left: 88px;
 }

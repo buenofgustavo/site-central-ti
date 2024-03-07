@@ -1,48 +1,77 @@
-<form class="form-grid">
-    
-    <!--
-    <div class="div-cadastro" style="justify-content: center; display: flex; width: 100%; ">
-        <nb-form-field style="flex: 1;">
-            <label for="tipoSolicitacao">Tipo de Solicitação</label>
-            <input disabled class="todos-inputs" id="tipoSolicitacao" nbInput name="tipoSolicitacao">
-        </nb-form-field>
-    </div>
-    -->
+<div style="max-width: 780px; min-width: 780px; max-height: 448px; min-height: 448px;  background-color: white; overflow: hidden;">
 
-  <div class="div-cadastro">
-    <nb-form-field>
-      <label for="nomeCompleto">Nome Completo</label>
-      <input disabled class="todos-inputs" id="nomeCompleto" nbInput name="nomeCompleto">
-    </nb-form-field>
-    <nb-form-field>
-      <label for="usuarioTelefone">Número de telefone</label>
-      <input disabled class="todos-inputs" id="usuarioTelefone" nbInput placeholder="(00) 00000-0000" name="numero">
-    </nb-form-field>
-  </div>
-  <div class="div-cadastro">
-    <nb-form-field>
-      <label for="usuarioCPF">CPF</label>
-      <div style="display: flex;">
-        <input disabled class="todos-inputs" id="usuarioCPF" nbInput placeholder="000.000.000-00" name="cpf">
+  <mat-tab-group>
+    <mat-tab label="Cadastro de Usuário">
+      <div style=" margin-top: 45px; margin-left: 41px;">
+
+        <form class="form-grid">
+      
+        <div class="div-cadastro">
+          <nb-form-field>
+            <label for="nomeCompleto">Nome Completo</label>
+            <input disabled class="todos-inputs" id="nomeCompleto" nbInput name="nomeCompleto">
+          </nb-form-field>
+          <nb-form-field>
+            <label for="usuarioTelefone">Número de telefone</label>
+            <input disabled class="todos-inputs" id="usuarioTelefone" nbInput placeholder="(00) 00000-0000" name="numero">
+          </nb-form-field>
+        </div>
+        <div class="div-cadastro">
+          <nb-form-field>
+            <label for="usuarioCPF">CPF</label>
+            <div style="display: flex;">
+              <input disabled class="todos-inputs" id="usuarioCPF" nbInput placeholder="000.000.000-00" name="cpf">
+            </div>
+          </nb-form-field>
+          <nb-form-field class="form-field">
+            <label for="filial">Filial</label>
+            <input disabled id="usuarioFilial" nbInput placeholder="" name="filial">
+          </nb-form-field>
+        </div>
+        <div class="div-cadastro">
+          <nb-form-field>
+            <label for="usuarioCargo">Cargo</label>
+            <input disabled class="todos-inputs" id="usuarioCargo" nbInput placeholder="" name="cargo">
+          </nb-form-field>
+          <nb-form-field class="form-field">
+            <label for="departamento">Departamento</label>
+            <input disabled id="usuarioDepartamento" nbInput placeholder="" name="departamento">
+          </nb-form-field>
+        </div>
+        
+        <label for="nb-checkbox" style="display: flex; margin-top: 9px;">PJ:</label>
+        <nb-checkbox disabled id="nb-checkbox" style="transform: scale(1.9);" status="basic"></nb-checkbox>
+      
+      </form>
+
       </div>
-    </nb-form-field>
-    <nb-form-field class="form-field">
-      <label for="filial">Filial</label>
-      <input disabled id="usuarioFilial" nbInput placeholder="" name="filial">
-    </nb-form-field>
-  </div>
-  <div class="div-cadastro">
-    <nb-form-field>
-      <label for="usuarioCargo">Cargo</label>
-      <input disabled class="todos-inputs" id="usuarioCargo" nbInput placeholder="" name="cargo">
-    </nb-form-field>
-    <nb-form-field class="form-field">
-      <label for="departamento">Departamento</label>
-      <input disabled id="usuarioDepartamento" nbInput placeholder="" name="departamento">
-    </nb-form-field>
-  </div>
-  
-  <label for="nb-checkbox" style="display: flex; margin-top: 9px;">PJ:</label>
-  <nb-checkbox disabled id="nb-checkbox" style="transform: scale(1.9);" status="basic"></nb-checkbox>
 
-</form>
+    </mat-tab>
+    <mat-tab label="Comentários">
+      <nb-card style="height: 400px;"> <!-- Defina uma altura máxima para o card -->
+        <nb-card-body style="overflow-y: auto;"> <!-- Adicione a propriedade overflow-y -->
+          <div *ngFor="let comentario of comentarios">
+            <nb-card>
+              <nb-card-body>
+                <app-user-info [name]="'Gustavo Bueno'" [title]="'FullStack Developer'"></app-user-info>
+                <div>
+                  <span>{{ comentario }}</span>
+                </div>
+              </nb-card-body>
+            </nb-card>
+          </div>
+        </nb-card-body>
+    
+        <nb-card-footer>
+          <div style="display: flex; align-items: center;">
+            <input [disabled]="dados.status !== 'Em Aberto'" type="text" nbInput fullWidth class="input-comentario" fieldSize="giant" [(ngModel)]="mensagem" placeholder="Escreva sua mensagem">
+            <button [disabled]="dados.status !== 'Em Aberto'"  style="margin-left: 20px;" nbButton status="basic" (click)="enviarMensagem()">
+              <nb-icon icon="paper-plane-outline"></nb-icon>
+            </button>
+          </div>
+        </nb-card-footer>
+      </nb-card>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

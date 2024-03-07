@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./modal-colaboradores-dp.component.scss']
 })
 export class ModalColaboradoresDpComponent {
-
+  
 }

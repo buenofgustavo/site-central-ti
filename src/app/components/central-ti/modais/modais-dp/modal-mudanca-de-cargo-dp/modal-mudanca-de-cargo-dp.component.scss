@@ -22,21 +22,26 @@
     margin-bottom: 30px;
   }
   
-  .todos-inputs {
-    width: calc(100% - 20px); // Ajusta para que haja um espaço para a borda
-  }
+
   
   nb-form-field {
     margin-top: 8px;
   }
   
-  .todos-inputs,
-  nb-select {
-    width: 100%;
-  }
+
 
   .center-content {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+
+  nb-form-field {
+    width: calc(100% - 20px);
+  }
+
+  .vertical-label {
+    display: flex;
+    flex-direction: column;
   }
