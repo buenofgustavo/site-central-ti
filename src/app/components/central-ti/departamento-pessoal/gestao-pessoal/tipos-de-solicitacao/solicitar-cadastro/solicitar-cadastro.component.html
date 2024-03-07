@@ -1,59 +1,91 @@
 
-    <nb-card class="card-center">
-      <nb-card-header>
-        Solicitar Cadastro
-      </nb-card-header>
-      <nb-card-body>
-        <form class="form-grid">
-          <div class="div-cadastro">
-            <nb-form-field>
-              <label for="nomeCompleto">Nome Completo</label>
-              <input class="todos-inputs" id="nomeCompleto" nbInput name="nomeCompleto">
-            </nb-form-field>
-            <nb-form-field>
-              <label for="usuarioTelefone">Número de telefone</label>
-              <input class="todos-inputs" id="usuarioTelefone" nbInput placeholder="(62) 00000-0000" name="numero">
-            </nb-form-field>
+<div style="max-width: 780px; min-width: 780px; max-height: 428px; min-height: 428px;  background-color: white; margin-top: 30px;  margin-left: 190px;">
+
+  <mat-tab-group>
+    <mat-tab label="Cadastro de Usuário">
+      <div style="margin-left: 40px; margin-bottom: 18px; margin-top: 10px;">
+
+
+          <form class="form-grid">
+            <div class="div-cadastro">
+              <nb-form-field>
+                <label for="nomeCompleto">Nome Completo</label>
+                <input class="todos-inputs" id="nomeCompleto" nbInput name="nomeCompleto">
+              </nb-form-field>
+              <nb-form-field>
+                <label for="usuarioTelefone">Número de telefone</label>
+                <input class="todos-inputs" id="usuarioTelefone" nbInput placeholder="(62) 00000-0000" name="numero">
+              </nb-form-field>
+            </div>
+            <div class="div-cadastro">
+              <nb-form-field>
+                <label for="usuarioCPF">CPF</label>
+                <div style="display: flex;">
+                  <input class="todos-inputs" id="usuarioCPF" nbInput placeholder="000.000.000-00" name="cpf">
+                </div>
+              </nb-form-field>
+              <nb-form-field class="form-field">
+                <label for="filial">Filial</label>
+                <nb-select placeholder="" name="perfis">
+                  <nb-option value="">Nenhum</nb-option>
+                  <nb-option *ngFor="let filial of filiais" [value]="filial.value" >
+                    {{filial.viewValue}}
+                  </nb-option>
+                </nb-select>
+              </nb-form-field>
+            </div>
+            <div class="div-cadastro">
+              <nb-form-field>
+                <label for="usuarioCargo">Cargo</label>
+                <input class="todos-inputs" id="usuarioCargo" nbInput placeholder="" name="cargo">
+              </nb-form-field>
+              <nb-form-field class="form-field">
+                <label for="departamento">Departamento</label>
+                <nb-select placeholder="" name="perfis">
+                  <nb-option value="">Nenhum</nb-option>
+                  <nb-option *ngFor="let departamento of departamentos" [value]="departamento.value" >
+                    {{departamento.viewValue}}
+                  </nb-option>
+                </nb-select>
+              </nb-form-field>
+            </div>
+            
+            <label for="nb-checkbox" style="display: flex; margin-top: 9px;">PJ:</label>
+            <nb-checkbox id="nb-checkbox" style="transform: scale(1.9);" status="basic"></nb-checkbox>
+        
+          </form>
+
+
+          <button style="margin-top: 22px;" class="button" nbButton>Solicitar</button>
+        </div>
+
+    </mat-tab>
+    <mat-tab label="Comentários">
+      <nb-card style="height: 380px;"> <!-- Defina uma altura máxima para o card -->
+        <nb-card-body style="overflow-y: auto;"> <!-- Adicione a propriedade overflow-y -->
+          <div *ngFor="let comentario of comentarios">
+            <nb-card>
+              <nb-card-body>
+                <app-user-info [name]="'Gustavo Bueno'" [title]="'FullStack Developer'"></app-user-info>
+                <div>
+                  <span>{{ comentario }}</span>
+                </div>
+              </nb-card-body>
+            </nb-card>
           </div>
-          <div class="div-cadastro">
-            <nb-form-field>
-              <label for="usuarioCPF">CPF</label>
-              <div style="display: flex;">
-                <input class="todos-inputs" id="usuarioCPF" nbInput placeholder="000.000.000-00" name="cpf">
-              </div>
-            </nb-form-field>
-            <nb-form-field class="form-field">
-              <label for="filial">Filial</label>
-              <nb-select placeholder="" name="perfis">
-                <nb-option value="">Nenhum</nb-option>
-                <nb-option *ngFor="let filial of filiais" [value]="filial.value" >
-                  {{filial.viewValue}}
-                </nb-option>
-              </nb-select>
-            </nb-form-field>
+        </nb-card-body>
+    
+        <nb-card-footer style="margin-bottom: -0px;">
+          <div style="display: flex; align-items: center;">
+            <input type="text" nbInput fullWidth class="input-comentario" fieldSize="giant" [(ngModel)]="mensagem" placeholder="Escreva sua mensagem">
+            <button style="margin-left: 20px;" nbButton status="basic" (click)="enviarMensagem()">
+              <nb-icon icon="paper-plane-outline"></nb-icon>
+            </button>
           </div>
-          <div class="div-cadastro">
-            <nb-form-field>
-              <label for="usuarioCargo">Cargo</label>
-              <input class="todos-inputs" id="usuarioCargo" nbInput placeholder="" name="cargo">
-            </nb-form-field>
-            <nb-form-field class="form-field">
-              <label for="departamento">Departamento</label>
-              <nb-select placeholder="" name="perfis">
-                <nb-option value="">Nenhum</nb-option>
-                <nb-option *ngFor="let departamento of departamentos" [value]="departamento.value" >
-                  {{departamento.viewValue}}
-                </nb-option>
-              </nb-select>
-            </nb-form-field>
-          </div>
-          
-          <label for="nb-checkbox" style="display: flex; margin-top: 9px;">PJ:</label>
-          <nb-checkbox id="nb-checkbox" style="transform: scale(1.9);" status="basic"></nb-checkbox>
-      
-        </form>
-      </nb-card-body>
-      <nb-card-footer>
-        <button class="button" nbButton>Solicitar</button>
-      </nb-card-footer>
-    </nb-card>
+        </nb-card-footer>
+      </nb-card>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>
+

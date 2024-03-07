@@ -1,27 +1,62 @@
 
-      <nb-card class="card-center">
-        <nb-card-header>
-          Solicitar Desligamento
-        </nb-card-header>
-        <nb-card-body>
-          <form class="form-grid">
-            <div class="center-content">
-              <nb-form-field style="flex: 1;">
-                  <label for="filial">Colaboradores</label>
-                  <nb-select placeholder="" name="perfis">
-                      <nb-option value="">Nenhum</nb-option>
-                      <nb-option *ngFor="let colaborador of colaboradores" [value]="colaborador.value">
-                          {{colaborador.viewValue}}
-                      </nb-option>
-                  </nb-select>
-              </nb-form-field>
-              <button nbButton style="margin-top: 49px; margin-left: 10px;">
-                  <nb-icon icon="search"></nb-icon>
-              </button>
-            </div>
-          </form>
-        </nb-card-body>
-        <nb-card-footer>
-          <button class="button" nbButton>Solicitar</button>
-        </nb-card-footer>
-      </nb-card>
+
+      <div style="max-width: 780px; min-width: 780px; max-height: 428px; min-height: 428px;  background-color: white; margin-top: 30px;  margin-left: 190px;">
+
+        <mat-tab-group>
+          <mat-tab label="Solicitar Desligamento">
+            <div style="margin-bottom: 18px; margin-top: 10px;">
+      
+      
+                <form class="form-grid">
+                  <div class="center-content" style="margin-top: 4rem;">
+                    <nb-form-field style="flex: 1;">
+                        <label for="filial">Colaboradores</label>
+                        <nb-select placeholder="" name="perfis">
+                            <nb-option value="">Nenhum</nb-option>
+                            <nb-option *ngFor="let colaborador of colaboradores" [value]="colaborador.value">
+                                {{colaborador.viewValue}}
+                            </nb-option>
+                        </nb-select>
+                    </nb-form-field>
+                    <button nbButton style="margin-top: 49px; margin-left: 10px;">
+                        <nb-icon icon="search"></nb-icon>
+                    </button>
+                  </div>
+                </form>
+      
+                <div class="center-content">
+                  <button style="margin-top: 44px;" class="button" nbButton>Solicitar</button>
+
+                </div>
+              </div>
+      
+          </mat-tab>
+          <mat-tab label="Comentários">
+            <nb-card style="height: 380px;"> <!-- Defina uma altura máxima para o card -->
+              <nb-card-body style="overflow-y: auto;"> <!-- Adicione a propriedade overflow-y -->
+                <div *ngFor="let comentario of comentarios">
+                  <nb-card>
+                    <nb-card-body>
+                      <app-user-info [name]="'Gustavo Bueno'" [title]="'FullStack Developer'"></app-user-info>
+                      <div>
+                        <span>{{ comentario }}</span>
+                      </div>
+                    </nb-card-body>
+                  </nb-card>
+                </div>
+              </nb-card-body>
+          
+              <nb-card-footer style="margin-bottom: -0px;">
+                <div style="display: flex; align-items: center;">
+                  <input type="text" nbInput fullWidth class="input-comentario" fieldSize="giant" [(ngModel)]="mensagem" placeholder="Escreva sua mensagem">
+                  <button style="margin-left: 20px;" nbButton status="basic" (click)="enviarMensagem()">
+                    <nb-icon icon="paper-plane-outline"></nb-icon>
+                  </button>
+                </div>
+              </nb-card-footer>
+            </nb-card>
+          </mat-tab>
+        </mat-tab-group>
+      
+      </div>
+      

@@ -7,6 +7,8 @@ import { ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { NbWindowService } from '@nebular/theme';
 import { ModalCadastroUsuarioDpComponent } from '../../modais/modais-dp/modal-cadastro-usuario-dp/modal-cadastro-usuario-dp.component';
 import { ModalFeriasDpComponent } from '../../modais/modais-dp/modal-ferias-dp/modal-ferias-dp.component';
+import { ModalDesligamentoDpComponent } from '../../modais/modais-dp/modal-desligamento-dp/modal-desligamento-dp.component';
+import { ModalMudancaDeCargoDpComponent } from '../../modais/modais-dp/modal-mudanca-de-cargo-dp/modal-mudanca-de-cargo-dp.component';
 
 
 
@@ -34,36 +36,36 @@ interface Tipos {
 
 
 const ELEMENT_DATA: TableColoboradores[] = [
-  {tipo: "", status: 'Em Aberto', data_abertura: "1.0079", requerente: 'H'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "4.0026", requerente: 'He'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
-  {tipo: "", status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "1.0079", requerente: 'H'},
+  {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "4.0026", requerente: 'He'},
+  {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Usuário', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Desligamento', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Cadastro de Férias', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Em Aberto', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
+  {tipo: 'Mudança de Cargo', status: 'Lithium', data_abertura: "6.941", requerente: 'Li'},
 ];
 
 @Component({
@@ -106,8 +108,27 @@ export class SolicitacoesDpComponent {
 
   constructor(private windowService: NbWindowService) {}
 
-  openWindow() {
-    this.windowService.open(ModalFeriasDpComponent, { title: `Window` });
+  openWindow(element: any) {
+    const status = element.tipo;
+    
+    switch (status) {
+      case 'Cadastro de Usuário':
+        this.windowService.open(ModalCadastroUsuarioDpComponent, { title: `Cadastro de Usuário` });
+        break;
+      case 'Cadastro de Férias':
+        this.windowService.open(ModalFeriasDpComponent, { title: `Cadastro de Férias` });
+        break;
+      case 'Desligamento':
+        this.windowService.open(ModalDesligamentoDpComponent, { title: `Desligamento` });
+        break;
+      case 'Mudança de Cargo':
+        this.windowService.open(ModalMudancaDeCargoDpComponent, { title: `Mudança de Cargo` });
+        break;
+      default:
+        // Handle cases where the status doesn't match any expected value
+        console.error(`Unexpected status: ${status}`);
+        break;
+    }
   }
 
 }

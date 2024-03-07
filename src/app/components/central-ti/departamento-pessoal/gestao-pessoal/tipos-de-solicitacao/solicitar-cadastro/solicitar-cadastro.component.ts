@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 interface Departamentos {
   value: number;
@@ -35,4 +36,19 @@ export class SolicitarCadastroComponent {
     { value: 2, viewValue: 'Itu' },
     { value: 3, viewValue: 'Paranaguá' },
   ]
+
+  inputItemFormControl = new FormControl();
+  textareaItemFormControl = new FormControl();
+
+  mensagem: string = '';
+  comentarios: string[] = [];
+
+  enviarMensagem() {
+    // Adicionar o comentário à lista de comentários
+    this.comentarios.push(this.mensagem);
+    
+    // Limpar o campo de entrada
+    this.mensagem = '';
+  }
+  
 }

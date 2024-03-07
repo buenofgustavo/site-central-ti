@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { NbWindowService } from '@nebular/theme';
+import { ModalColaboradoresDpComponent } from '../../modais/modais-dp/modal-colaboradores-dp/modal-colaboradores-dp.component';
 
 interface Departamentos {
   value: number;
@@ -65,7 +67,7 @@ const ELEMENT_DATA: TableColoboradores[] = [
   styleUrls: ['./colaboradores-ti.component.scss']
 })
 export class ColaboradoresTiComponent {
-  displayedColumns: string[] = ['nome', 'cpf', 'telefone', 'departamento'];
+  displayedColumns: string[] = ['nome', 'cpf', 'telefone', 'departamento', 'acao'];
   dataSource = new MatTableDataSource<TableColoboradores>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -74,7 +76,6 @@ export class ColaboradoresTiComponent {
     this.dataSource.paginator = this.paginator;
   }
   
-
   departamentos: Departamentos[] = [
     { value: 0, viewValue: 'T.I' },
     { value: 1, viewValue: 'Jurídico' },
@@ -87,7 +88,7 @@ export class ColaboradoresTiComponent {
     { value: 8, viewValue: 'Compras' },
     { value: 9, viewValue: 'Comercial' },
   ]
-
+  
   filiais: Filiais[] = [
     { value: 0, viewValue: 'Matriz' },
     { value: 1, viewValue: 'Alexânia' },
@@ -103,4 +104,11 @@ export class ColaboradoresTiComponent {
     { value: 4, viewValue: 'Lucas' },
     { value: 5, viewValue: 'Ítalo' },
   ]
+
+  constructor(private windowService: NbWindowService) {}
+
+  openWindow() {
+    this.windowService.open(ModalColaboradoresDpComponent, { title: `Window` });
+  }
+  
 }

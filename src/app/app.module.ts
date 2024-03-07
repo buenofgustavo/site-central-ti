@@ -41,7 +41,10 @@ import { SolicitacoesDpComponent } from './components/central-ti/departamento-pe
 import { ModalColaboradoresDpComponent } from './components/central-ti/modais/modais-dp/modal-colaboradores-dp/modal-colaboradores-dp.component';
 import { ModalCadastroUsuarioDpComponent } from './components/central-ti/modais/modais-dp/modal-cadastro-usuario-dp/modal-cadastro-usuario-dp.component';
 import { ModalFeriasDpComponent } from './components/central-ti/modais/modais-dp/modal-ferias-dp/modal-ferias-dp.component';
-
+import { ModalMudancaDeCargoDpComponent } from './components/central-ti/modais/modais-dp/modal-mudanca-de-cargo-dp/modal-mudanca-de-cargo-dp.component';
+import { ModalDesligamentoDpComponent } from './components/central-ti/modais/modais-dp/modal-desligamento-dp/modal-desligamento-dp.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { UserInfoComponent } from './components/central-ti/departamento-pessoal/templates/user-info/user-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,13 +60,17 @@ import { ModalFeriasDpComponent } from './components/central-ti/modais/modais-dp
     ModalColaboradoresDpComponent,
     ModalCadastroUsuarioDpComponent,
     ModalFeriasDpComponent,
+    ModalMudancaDeCargoDpComponent,
+    ModalDesligamentoDpComponent,
+    UserInfoComponent,
+    
     
   ],
   imports: [
     AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, BrowserModule, BrowserAnimationsModule, NbEvaIconsModule,
     NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputModule,NbLayoutModule,NbMenuModule.forRoot(),NbSelectModule,
     NbSidebarModule.forRoot(), NbStepperModule, NbThemeModule.forRoot({ name: 'default' }),NbUserModule,MatTableModule, NbContextMenuModule,
-    MatPaginatorModule,NbCheckboxModule,NbDatepickerModule.forRoot(),NbWindowModule.forRoot(),
+    MatPaginatorModule,NbCheckboxModule,NbDatepickerModule.forRoot(),NbWindowModule.forRoot(),MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

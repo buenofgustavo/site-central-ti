@@ -8,7 +8,7 @@
     align-items: center;     /* Centers vertically */
     border-radius: 20px;
     max-width: 850px;
-    height: 340px;
+    height: 440px;
     margin: auto;            /* Ensures horizontal centering within the parent */
     position: relative;      /* For vertical centering within the parent */
     top: 250px;  
@@ -38,7 +38,6 @@
 .nomecompleto{
     display: flex;
 }
-
 .center-content {
   display: flex;
   align-items: center;
@@ -90,5 +89,11 @@ nb-checkbox:not(:only-child) {
 }
 
 .labeldatafim{
-  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.button{
+  width: calc(100% - 40px); // Ajusta para que haja um espaço para a borda
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

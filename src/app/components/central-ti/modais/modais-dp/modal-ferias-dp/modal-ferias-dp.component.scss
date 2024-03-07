@@ -7,8 +7,8 @@
     justify-content: center; /* Centers horizontally */
     align-items: center;     /* Centers vertically */
     border-radius: 20px;
-    max-width: 850px;
-    height: 340px;
+    max-width: 890px;
+    height: 350px;
     margin: auto;            /* Ensures horizontal centering within the parent */
     position: relative;      /* For vertical centering within the parent */
     top: 250px;  
@@ -70,7 +70,7 @@ nb-checkbox:not(:only-child) {
 }
 
 .input-group {
-  flex: 1;
+    margin-left: 10px;
 }
 
 .input-group label {
@@ -78,17 +78,9 @@ nb-checkbox:not(:only-child) {
   margin-bottom: 0.5em;
 }
 
-.datafim{
-  width: calc(100% - 10px); 
-  margin-left: 10px;
-  margin-top: -10px;
-}
-.dataini{
-  width: calc(100% - 10px);
-  margin-left:0px;
-  margin-top: -10px;
-}
+
+
 
 .labeldatafim{
-  margin-left: 10px;
+  margin-left: 4px;
 }

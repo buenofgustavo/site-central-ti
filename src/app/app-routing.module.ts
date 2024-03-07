@@ -12,6 +12,9 @@ import { SolicitacoesDpComponent } from './components/central-ti/departamento-pe
 import { ModalColaboradoresDpComponent } from './components/central-ti/modais/modais-dp/modal-colaboradores-dp/modal-colaboradores-dp.component';
 import { ModalCadastroUsuarioDpComponent } from './components/central-ti/modais/modais-dp/modal-cadastro-usuario-dp/modal-cadastro-usuario-dp.component';
 import { ModalFeriasDpComponent } from './components/central-ti/modais/modais-dp/modal-ferias-dp/modal-ferias-dp.component';
+import { ModalMudancaDeCargoDpComponent } from './components/central-ti/modais/modais-dp/modal-mudanca-de-cargo-dp/modal-mudanca-de-cargo-dp.component';
+import { ModalDesligamentoDpComponent } from './components/central-ti/modais/modais-dp/modal-desligamento-dp/modal-desligamento-dp.component';
+import { UserInfoComponent } from './components/central-ti/departamento-pessoal/templates/user-info/user-info.component';
 
 
 const routes: Routes = [
@@ -29,6 +32,9 @@ const routes: Routes = [
       {path: 'modal-cadastrar-usuario-dp', component: ModalCadastroUsuarioDpComponent},
       {path: 'modal-colaboradores-dp', component: ModalColaboradoresDpComponent},
       {path: 'modal-ferias-dp', component: ModalFeriasDpComponent},
+      {path: 'modal-desligamento-dp', component: ModalDesligamentoDpComponent},
+      {path: 'modal-mudanca-de-cargo-dp', component: ModalMudancaDeCargoDpComponent},
+      {path: 'template-comentario', component: UserInfoComponent},
     ]
   }
 ];

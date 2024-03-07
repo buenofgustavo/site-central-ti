@@ -49,4 +49,15 @@ export class MudancaDeCargoComponent {
     { value: 4, viewValue: 'Lucas' },
     { value: 5, viewValue: 'Ítalo' },
   ]
+
+  mensagem: string = '';
+  comentarios: string[] = [];
+
+  enviarMensagem() {
+    // Adicionar o comentário à lista de comentários
+    this.comentarios.push(this.mensagem);
+    
+    // Limpar o campo de entrada
+    this.mensagem = '';
+  }
 }

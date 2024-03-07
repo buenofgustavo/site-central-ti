@@ -23,4 +23,15 @@ export class CadastrarFeriasComponent {
 
   formControl = new FormControl(new Date());
   ngModelDate = new Date();
+
+  mensagem: string = '';
+  comentarios: string[] = [];
+
+  enviarMensagem() {
+    // Adicionar o comentário à lista de comentários
+    this.comentarios.push(this.mensagem);
+    
+    // Limpar o campo de entrada
+    this.mensagem = '';
+  }
 }
