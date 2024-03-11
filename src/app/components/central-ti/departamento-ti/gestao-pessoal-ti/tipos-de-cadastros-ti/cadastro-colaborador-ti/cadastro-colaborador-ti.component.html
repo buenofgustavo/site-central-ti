@@ -1,0 +1,142 @@
+
+<div style="max-width: 780px; min-width: 780px; max-height: 448px; min-height: 448px;  background-color: white; margin-top: 20px;  margin-left: 190px;">
+
+    <mat-tab-group>
+        <mat-tab label="Solicitar Desligamento">
+            <div style="margin-bottom: 18px; margin-top: 10px;">
+      
+      
+                <form class="form-grid">
+                  <div class="center-content" style="margin-top: 4rem;">
+                    <nb-form-field style="flex: 1;">
+                        <label for="filial">Colaboradores</label>
+                        <nb-select placeholder="" name="perfis">
+                            <nb-option value="">Nenhum</nb-option>
+                            <nb-option *ngFor="let colaborador of colaboradores" [value]="colaborador.value">
+                                {{colaborador.viewValue}}
+                            </nb-option>
+                        </nb-select>
+                    </nb-form-field>
+                  </div>
+                </form>
+      
+                <div class="center-content">
+                  <button style="margin-top: 210px;" class="button" nbButton>Confirmar</button>
+                </div>
+              </div>
+         
+          </mat-tab>
+
+      <mat-tab label="Computador">
+
+        <div style=" margin-left: 52px;">
+  
+            <form class="form-grid">
+                <div class="center-content" style="margin-top: 5px;">
+                  <nb-form-field style="flex: 1;">
+                    <label for="nome_do_computador">Nome do Computador</label>
+                    <input class="todos-inputs" id="nome_do_computador" nbInput name="nome_do_computador">
+                  </nb-form-field>
+                  <button nbButton style="margin-top: 33px; margin-left: 10px;">
+                      <nb-icon icon="search"></nb-icon>
+                  </button>
+                  <button style="margin-left: 18px; margin-top: 33px;" class="" nbButton>Vincular</button>
+                </div>
+            </form>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="nomeUsuario">Nome de Usuário</label>
+                  <input disabled class="todos-inputs" id="nomeUsuario" nbInput name="nomeUsuario">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="enderecoMAC">MAC</label>
+                  <input disabled class="todos-inputs" id="enderecoMAC" nbInput placeholder="" name="enderecoMAC">
+                </nb-form-field>
+            </div>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="marca">Marca</label>
+                  <input disabled class="todos-inputs" id="marca" nbInput name="marca">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="modelo">Modelo</label>
+                  <input disabled class="todos-inputs" id="modelo" nbInput placeholder="" name="modelo">
+                </nb-form-field>
+            </div>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="RAM">RAM</label>
+                  <input disabled class="todos-inputs" id="RAM" nbInput name="RAM">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="armazenamento">Armazenamento</label>
+                  <input disabled class="todos-inputs" id="armazenamento" nbInput placeholder="" name="armazenamento">
+                </nb-form-field>
+            </div>
+
+            <div class="center-content">
+                <nb-form-field>
+                  <label for="MAKRO">MAKRO</label>
+                  <input disabled class="todos-inputs" id="MAKRO" nbInput name="MAKRO">
+                </nb-form-field>
+            </div>
+
+    
+        </div>
+
+      </mat-tab>
+
+      <mat-tab label="Acessos">
+
+        <div style="margin-bottom: 18px; margin-top: 50px; margin-left: 55px;">
+  
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="VR">VR</label>
+                  <input class="todos-inputs" id="VR" nbInput name="VR">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="gmail">Gmail</label>
+                  <input class="todos-inputs" id="gmail" nbInput placeholder="" name="gmail">
+                </nb-form-field>
+            </div>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="FreteBras">FreteBras</label>
+                  <input class="todos-inputs" id="FreteBras" nbInput name="FreteBras">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="SZ.chat">SZ.chat</label>
+                  <input class="todos-inputs" id="SZ.chat" nbInput placeholder="" name="SZ.chat">
+                </nb-form-field>
+            </div>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="Zoho">Zoho</label>
+                  <input class="todos-inputs" id="Zoho" nbInput name="Zoho">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="Central T.I">Central T.I</label>
+                  <input class="todos-inputs" id="Central T.I" nbInput placeholder="" name="Central T.I">
+                </nb-form-field>
+            </div>
+        
+            <div class="center-content">
+                <button style="margin-top: 70px;" class="button-vincular" nbButton>Vincular</button>
+            </div>
+    
+        </div>
+
+      </mat-tab>
+
+
+    </mat-tab-group>
+  
+  </div>
+  
+  
