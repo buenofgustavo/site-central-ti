@@ -1,38 +1,154 @@
-<form class="form-grid">
-      <div class="div-cadastro">
-        <nb-form-field>
-          <label for="nomeCompleto">Nome Completo</label>
-          <input disabled class="todos-inputs" id="nomeCompleto" nbInput name="nomeCompleto">
-        </nb-form-field>
-        <nb-form-field>
-          <label for="usuarioTelefone">Número de telefone</label>
-          <input disabled class="todos-inputs" id="usuarioTelefone" nbInput placeholder="(00) 00000-0000" name="numero">
-        </nb-form-field>
-      </div>
-      <div class="div-cadastro">
-        <nb-form-field>
-          <label for="usuarioCPF">CPF</label>
-          <div style="display: flex;">
-            <input disabled class="todos-inputs" id="usuarioCPF" nbInput placeholder="000.000.000-00" name="cpf">
+<div style="max-width: 780px; min-width: 780px; max-height: 478px; min-height: 478px;  background-color: white; overflow: hidden;">
+
+  <mat-tab-group>
+    <mat-tab label="Colaborador">
+      <div style="margin-left: 17px;">
+
+        <form class="form-grid" style=" margin-top: 50px; margin-left: 38px;">
+          <div class="div-cadastro">
+            <nb-form-field>
+              <label for="nomeCompleto">Nome Completo</label>
+              <input disabled class="todos-inputs" id="nomeCompleto" nbInput name="nomeCompleto">
+            </nb-form-field>
+            <nb-form-field>
+              <label for="usuarioTelefone">Número de telefone</label>
+              <input disabled class="todos-inputs" id="usuarioTelefone" nbInput placeholder="(00) 00000-0000" name="numero">
+            </nb-form-field>
           </div>
-        </nb-form-field>
-        <nb-form-field class="form-field">
-          <label for="filial">Filial</label>
-          <input disabled id="usuarioFilial" nbInput placeholder="" name="filial">
-        </nb-form-field>
-      </div>
-      <div class="div-cadastro">
-        <nb-form-field>
-          <label for="usuarioCargo">Cargo</label>
-          <input disabled class="todos-inputs" id="usuarioCargo" nbInput placeholder="" name="cargo">
-        </nb-form-field>
-        <nb-form-field class="form-field">
-          <label for="departamento">Departamento</label>
-          <input disabled id="usuarioDepartamento" nbInput placeholder="" name="departamento">
-        </nb-form-field>
-      </div>
+          <div class="div-cadastro">
+            <nb-form-field>
+              <label for="usuarioCPF">CPF</label>
+              <div style="display: flex;">
+                <input disabled class="todos-inputs" id="usuarioCPF" nbInput placeholder="000.000.000-00" name="cpf">
+              </div>
+            </nb-form-field>
+            <nb-form-field class="form-field">
+              <label for="filial">Filial</label>
+              <input class="todos-inputs" disabled id="usuarioFilial" nbInput placeholder="" name="filial">
+            </nb-form-field>
+          </div>
+          <div class="div-cadastro">
+            <nb-form-field>
+              <label for="usuarioCargo">Cargo</label>
+              <input disabled class="todos-inputs" id="usuarioCargo" nbInput placeholder="" name="cargo">
+            </nb-form-field>
+            <nb-form-field class="form-field">
+              <label for="departamento">Departamento</label>
+              <input disabled class="todos-inputs" id="usuarioDepartamento" nbInput placeholder="" name="departamento">
+            </nb-form-field>
+          </div>
+          
+          <label for="nb-checkbox" style="display: flex; margin-top: 9px;">PJ:</label>
+          <nb-checkbox disabled id="nb-checkbox" style="transform: scale(1.9);" status="basic"></nb-checkbox>
       
-      <label for="nb-checkbox" style="display: flex; margin-top: 9px;">PJ:</label>
-      <nb-checkbox disabled id="nb-checkbox" style="transform: scale(1.9);" status="basic"></nb-checkbox>
+        </form>
+
+      </div>
+
+    </mat-tab>
+
+    <mat-tab label="Computador">
+
+      <div style=" margin-left: 52px;">
+
+          <form class="form-grid">
+              <div class="center-content" style="margin-top: 5px;">
+                <nb-form-field style="flex: 1;">
+                  <label for="nome_do_computador">Nome do Computador</label>
+                  <input disabled class="todos-inputs" id="nome_do_computador" nbInput name="nome_do_computador">
+                </nb-form-field>
+              </div>
+          </form>
+
+          <div class="div-cadastro">
+              <nb-form-field>
+                <label for="nomeUsuario">Nome de Usuário</label>
+                <input disabled class="todos-inputs" id="nomeUsuario" nbInput name="nomeUsuario">
+              </nb-form-field>
+              <nb-form-field>
+                <label for="enderecoMAC">MAC</label>
+                <input disabled class="todos-inputs" id="enderecoMAC" nbInput placeholder="" name="enderecoMAC">
+              </nb-form-field>
+          </div>
+
+          <div class="div-cadastro">
+              <nb-form-field>
+                <label for="marca">Marca</label>
+                <input disabled class="todos-inputs" id="marca" nbInput name="marca">
+              </nb-form-field>
+              <nb-form-field>
+                <label for="modelo">Modelo</label>
+                <input disabled class="todos-inputs" id="modelo" nbInput placeholder="" name="modelo">
+              </nb-form-field>
+          </div>
+
+          <div class="div-cadastro">
+              <nb-form-field>
+                <label for="RAM">RAM</label>
+                <input disabled class="todos-inputs" id="RAM" nbInput name="RAM">
+              </nb-form-field>
+              <nb-form-field>
+                <label for="armazenamento">Armazenamento</label>
+                <input disabled class="todos-inputs" id="armazenamento" nbInput placeholder="" name="armazenamento">
+              </nb-form-field>
+          </div>
+
+          <div class="center-content">
+              <nb-form-field>
+                <label for="MAKRO">MAKRO</label>
+                <input disabled class="todos-inputs" id="MAKRO" nbInput name="MAKRO">
+              </nb-form-field>
+          </div>
+
   
-    </form>
+      </div>
+
+    </mat-tab>
+
+    <mat-tab label="Acessos">
+
+      <div style="margin-bottom: 18px; margin-top: 50px; margin-left: 55px;">
+
+          <div class="div-cadastro">
+              <nb-form-field>
+                <label for="VR">VR</label>
+                <input disabled class="todos-inputs" id="VR" placeholder="" nbInput name="VR">
+              </nb-form-field>
+              <nb-form-field>
+                <label for="gmail">Gmail</label>
+                <input disabled class="todos-inputs" id="gmail" nbInput placeholder="" name="gmail">
+              </nb-form-field>
+          </div>
+
+          <div class="div-cadastro">
+              <nb-form-field>
+                <label for="FreteBras">FreteBras</label>
+                <input disabled class="todos-inputs" id="FreteBras" nbInput name="FreteBras">
+              </nb-form-field>
+              <nb-form-field>
+                <label for="SZ.chat">SZ.chat</label>
+                <input class="todos-inputs" id="SZ.chat" nbInput placeholder="" name="SZ.chat">
+              </nb-form-field>
+          </div>
+
+          <div class="div-cadastro">
+              <nb-form-field>
+                <label for="Zoho">Zoho</label>
+                <input disabled class="todos-inputs" id="Zoho" nbInput name="Zoho">
+              </nb-form-field>
+              <nb-form-field>
+                <label for="Central T.I">Central T.I</label>
+                <input disabled class="todos-inputs" id="Central T.I" nbInput placeholder="" name="Central T.I">
+              </nb-form-field>
+          </div>
+  
+      </div>
+
+    </mat-tab>
+
+    <mat-tab label="Anexos">
+    </mat-tab>
+
+  </mat-tab-group>
+
+</div>

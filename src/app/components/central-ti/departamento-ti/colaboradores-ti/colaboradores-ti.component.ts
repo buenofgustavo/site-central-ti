@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
-import {AfterViewInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import { NbWindowService } from '@nebular/theme';
+import {ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 import { ModalColaboradoresDpComponent } from '../../modais/modais-dp/modal-colaboradores-dp/modal-colaboradores-dp.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalColaboradoresTiComponent } from '../../modais/modais-ti/modal-colaboradores-ti/modal-colaboradores-ti.component';
+import { ModalEditarColaboradoresTiComponent } from '../../modais/modais-ti/modal-editar-colaboradores-ti/modal-editar-colaboradores-ti.component';
 
 interface Departamentos {
+  value: number;
+  viewValue: string;
+}
+
+interface Situacoes {
   value: number;
   viewValue: string;
 }
@@ -96,6 +103,12 @@ export class ColaboradoresTiComponent {
     { value: 3, viewValue: 'Paranaguá' },
   ]
 
+  situacoes: Situacoes[] = [
+    { value: 0, viewValue: 'Ativo' },
+    { value: 1, viewValue: 'Desligado' },
+  ]
+
+
   colaboradores: Colaboradores[] = [
     { value: 0, viewValue: 'Gustavo' },
     { value: 1, viewValue: 'João' },
@@ -105,10 +118,23 @@ export class ColaboradoresTiComponent {
     { value: 5, viewValue: 'Ítalo' },
   ]
 
-  constructor(private windowService: NbWindowService) {}
+  constructor(private dialog: MatDialog) {}
 
-  openWindow() {
-    this.windowService.open(ModalColaboradoresDpComponent, { title: `Window` });
+  openColaboradores() {
+    this.dialog.open(ModalColaboradoresTiComponent);
   }
-  
+
+  openEditarColaboradores() {
+    this.dialog.open(ModalEditarColaboradoresTiComponent);
+  }
+  deleteRow(element: any) {
+    // Para excluir uma linha, você precisa encontrar o índice do elemento na fonte de dados
+    const index = this.dataSource.data.indexOf(element);
+    if (index !== -1) {
+      // Se o elemento existir, remova-o da fonte de dados
+      this.dataSource.data.splice(index, 1);
+      // Notifique a tabela sobre a mudança na fonte de dados
+      this.dataSource._updateChangeSubscription();
+    }
+  }
 }

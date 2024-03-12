@@ -50,5 +50,17 @@ export class SolicitarCadastroComponent {
     // Limpar o campo de entrada
     this.mensagem = '';
   }
-  
+  imagemSelecionadaTermo: File | null = null
+  anexarTermo(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      this.imagemSelecionadaTermo = event.target.files[0];
+    }
+  }
+
+  imagemSelecionadaContrato: File | null = null
+  anexarContrato(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      this.imagemSelecionadaContrato = event.target.files[0];
+    }
+  }
 }

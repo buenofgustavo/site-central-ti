@@ -15,6 +15,14 @@ import { ModalFeriasDpComponent } from './components/central-ti/modais/modais-dp
 import { ModalMudancaDeCargoDpComponent } from './components/central-ti/modais/modais-dp/modal-mudanca-de-cargo-dp/modal-mudanca-de-cargo-dp.component';
 import { ModalDesligamentoDpComponent } from './components/central-ti/modais/modais-dp/modal-desligamento-dp/modal-desligamento-dp.component';
 import { UserInfoComponent } from './components/central-ti/departamento-pessoal/templates/user-info/user-info.component';
+import { GestaoPessoalTiComponent } from './components/central-ti/departamento-ti/gestao-pessoal-ti/gestao-pessoal-ti.component';
+import { CadastroColaboradorTiComponent } from './components/central-ti/departamento-ti/gestao-pessoal-ti/tipos-de-cadastros-ti/cadastro-colaborador-ti/cadastro-colaborador-ti.component';
+import { ChamadosTiComponent } from './components/central-ti/departamento-ti/chamados-ti/chamados-ti.component';
+import { ModalColaboradoresTiComponent } from './components/central-ti/modais/modais-ti/modal-colaboradores-ti/modal-colaboradores-ti.component';
+import { ModalEditarColaboradoresTiComponent } from './components/central-ti/modais/modais-ti/modal-editar-colaboradores-ti/modal-editar-colaboradores-ti.component';
+import { VisualizarChamadosGeralComponent } from './components/central-ti/chamados/visualizar-chamados-geral/visualizar-chamados-geral.component';
+import { CriarChamadosGeralComponent } from './components/central-ti/chamados/criar-chamados-geral/criar-chamados-geral.component';
+import { ModalVisualizarChamadosGeralComponent } from './components/central-ti/modais/modais-chamados/modal-visualizar-chamados-geral/modal-visualizar-chamados-geral.component';
 
 
 const routes: Routes = [
@@ -22,18 +30,26 @@ const routes: Routes = [
     path: '', component: NavbarComponent,
     children: [
       {path: 'gestao-pessoal', component: GestaoPessoalComponent},
+      {path: 'gestao-pessoal-ti', component: GestaoPessoalTiComponent},
       {path: 'cadastrar-ferias', component: CadastrarFeriasComponent},
       {path: 'mudanca-de-cargo', component: MudancaDeCargoComponent},
       {path: 'solicitar-cadastro', component: SolicitarCadastroComponent},
+      {path: 'chamados-ti', component: ChamadosTiComponent},
       {path: 'solicitar-desligamento', component: SolicitarDesligamentoComponent},
-      {path: 'solicitacoes-dp', component: SolicitacoesDpComponent},
+      {path: 'chamados-dp', component: SolicitacoesDpComponent},
+      {path: 'visualizar-chamados-geral', component: VisualizarChamadosGeralComponent},
+      {path: 'criar-chamados-geral', component: CriarChamadosGeralComponent},
       {path: 'colaboradores-dp', component: ColaboradoresDpComponent},
       {path: 'colaboradores-ti', component: ColaboradoresTiComponent},
-      {path: 'modal-cadastrar-usuario-dp', component: ModalCadastroUsuarioDpComponent},
-      {path: 'modal-colaboradores-dp', component: ModalColaboradoresDpComponent},
-      {path: 'modal-ferias-dp', component: ModalFeriasDpComponent},
-      {path: 'modal-desligamento-dp', component: ModalDesligamentoDpComponent},
+      {path: 'cadastrar-coloborador-ti', component: CadastroColaboradorTiComponent},
+      {path: 'modal-editar-coloboradores-ti', component: ModalEditarColaboradoresTiComponent},
       {path: 'modal-mudanca-de-cargo-dp', component: ModalMudancaDeCargoDpComponent},
+      {path: 'modal-desligamento-dp', component: ModalDesligamentoDpComponent},
+      {path: 'modal-colaboradores-ti', component: ModalColaboradoresTiComponent},
+      {path: 'modal-ferias-dp', component: ModalFeriasDpComponent},
+      {path: 'modal-colaboradores-dp', component: ModalColaboradoresDpComponent},
+      {path: 'modal-cadastrar-usuario-dp', component: ModalCadastroUsuarioDpComponent},
+      {path: 'modal-visualizar-chamados-geral', component: ModalVisualizarChamadosGeralComponent},
       {path: 'template-comentario', component: UserInfoComponent},
     ]
   }

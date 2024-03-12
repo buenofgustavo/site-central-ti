@@ -1,31 +1,51 @@
-
-<div style="max-width: 780px; min-width: 780px; max-height: 448px; min-height: 448px;  background-color: white; margin-top: 20px;  margin-left: 190px;">
+<div style="max-width: 780px; min-width: 780px; max-height: 478px; min-height: 478px;  background-color: white; overflow: hidden;">
 
     <mat-tab-group>
-        <mat-tab label="Cadastro de Usuário">
-            <div style="margin-bottom: 18px; margin-top: 10px;">
-      
-      
-                <form class="form-grid">
-                  <div class="center-content" style="margin-top: 4rem;">
-                    <nb-form-field style="flex: 1;">
-                        <label for="filial">Colaboradores</label>
-                        <nb-select placeholder="" name="perfis">
-                            <nb-option value="">Nenhum</nb-option>
-                            <nb-option *ngFor="let colaborador of colaboradores" [value]="colaborador.value">
-                                {{colaborador.viewValue}}
-                            </nb-option>
-                        </nb-select>
-                    </nb-form-field>
-                  </div>
-                </form>
-      
-                <div class="center-content">
-                  <button style="margin-top: 210px;" class="button" nbButton>Confirmar</button>
+      <mat-tab label="Colaborador">
+        <div style="margin-left: 17px;">
+  
+          <form class="form-grid" style=" margin-top: 50px; margin-left: 38px;">
+            <div class="div-cadastro">
+              <nb-form-field>
+                <label for="nomeCompleto">Nome Completo</label>
+                <input class="todos-inputs" id="nomeCompleto" nbInput name="nomeCompleto">
+              </nb-form-field>
+              <nb-form-field>
+                <label for="usuarioTelefone">Número de telefone</label>
+                <input class="todos-inputs" id="usuarioTelefone" nbInput placeholder="(00) 00000-0000" name="numero">
+              </nb-form-field>
+            </div>
+            <div class="div-cadastro">
+              <nb-form-field>
+                <label for="usuarioCPF">CPF</label>
+                <div style="display: flex;">
+                  <input class="todos-inputs" id="usuarioCPF" nbInput placeholder="000.000.000-00" name="cpf">
                 </div>
-              </div>
-         
-          </mat-tab>
+              </nb-form-field>
+              <nb-form-field class="form-field">
+                <label for="filial">Filial</label>
+                <input class="todos-inputs" id="usuarioFilial" nbInput placeholder="" name="filial">
+              </nb-form-field>
+            </div>
+            <div class="div-cadastro">
+              <nb-form-field>
+                <label for="usuarioCargo">Cargo</label>
+                <input class="todos-inputs" id="usuarioCargo" nbInput placeholder="" name="cargo">
+              </nb-form-field>
+              <nb-form-field class="form-field">
+                <label for="departamento">Departamento</label>
+                <input class="todos-inputs" id="usuarioDepartamento" nbInput placeholder="" name="departamento">
+              </nb-form-field>
+            </div>
+            
+            <label for="nb-checkbox" style="display: flex; margin-top: 9px;">PJ:</label>
+            <nb-checkbox id="nb-checkbox" style="transform: scale(1.9);" status="basic"></nb-checkbox>
+        
+          </form>
+  
+        </div>
+  
+      </mat-tab>
 
       <mat-tab label="Computador">
 
@@ -37,10 +57,6 @@
                     <label for="nome_do_computador">Nome do Computador</label>
                     <input class="todos-inputs" id="nome_do_computador" nbInput name="nome_do_computador">
                   </nb-form-field>
-                  <button nbButton style="margin-top: 33px; margin-left: 10px;">
-                      <nb-icon icon="search"></nb-icon>
-                  </button>
-                  <button style="margin-left: 18px; margin-top: 33px;" class="" nbButton>Vincular</button>
                 </div>
             </form>
 
@@ -96,7 +112,7 @@
             <div class="div-cadastro">
                 <nb-form-field>
                   <label for="VR">VR</label>
-                  <input class="todos-inputs" id="VR" nbInput name="VR">
+                  <input class="todos-inputs" id="VR" placeholder="" nbInput name="VR">
                 </nb-form-field>
                 <nb-form-field>
                   <label for="gmail">Gmail</label>
@@ -125,18 +141,14 @@
                   <input class="todos-inputs" id="Central T.I" nbInput placeholder="" name="Central T.I">
                 </nb-form-field>
             </div>
-        
-            <div class="center-content">
-                <button style="margin-top: 70px;" class="button-vincular" nbButton>Vincular</button>
-            </div>
     
         </div>
 
       </mat-tab>
 
+      <mat-tab label="Anexos">
+      </mat-tab>
 
     </mat-tab-group>
   
   </div>
-  
-  

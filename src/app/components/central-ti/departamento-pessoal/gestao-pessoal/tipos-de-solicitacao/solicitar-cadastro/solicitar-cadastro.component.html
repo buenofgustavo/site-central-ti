@@ -14,7 +14,7 @@
               </nb-form-field>
               <nb-form-field>
                 <label for="usuarioTelefone">Número de telefone</label>
-                <input class="todos-inputs" id="usuarioTelefone" nbInput placeholder="(62) 00000-0000" name="numero">
+                <input class="todos-inputs" id="usuarioTelefone" nbInput placeholder="(00) 00000-0000" name="numero">
               </nb-form-field>
             </div>
             <div class="div-cadastro">
@@ -56,10 +56,29 @@
           </form>
 
 
-          <button style="margin-top: 22px;" class="button" nbButton>Solicitar</button>
+          <button style="margin-top: 22px;" class="button" nbButton>Cadastrar</button>
         </div>
 
+      </mat-tab>
+
+        
+    <mat-tab label="Anexos">
+
+      <div style="margin-bottom: 18px; margin-top: 50px; margin-left: 41px;">
+
+          <div style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">
+              <label for="termoResponsabilidade">Termo de Resposabilidade</label>
+              <input class="button" name="termoResponsabilidade" nbInput type="file" (change)="anexarTermo($event)" shape="semi-round" style="padding: 9px;">
+          </div>
+          <div style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">
+              <label for="contrato">Contrato</label>
+              <input class="button" nbInput type="file" (change)="anexarContrato($event)" shape="semi-round" style="padding: 9px;">
+          </div>
+
+      </div>
+
     </mat-tab>
+
     <mat-tab label="Comentários">
       <nb-card style="height: 380px;"> <!-- Defina uma altura máxima para o card -->
         <nb-card-body style="overflow-y: auto;"> <!-- Adicione a propriedade overflow-y -->
@@ -85,6 +104,7 @@
         </nb-card-footer>
       </nb-card>
     </mat-tab>
+
   </mat-tab-group>
 
 </div>

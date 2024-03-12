@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {AfterViewInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import { NbWindowService } from '@nebular/theme';
+import {ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 import { ModalColaboradoresDpComponent } from '../../modais/modais-dp/modal-colaboradores-dp/modal-colaboradores-dp.component';
+import { MatDialog } from '@angular/material/dialog';
 
 interface Departamentos {
   value: number;
@@ -11,6 +11,11 @@ interface Departamentos {
 }
 
 interface Filiais {
+  value: number;
+  viewValue: string;
+}
+
+interface Situacoes {
   value: number;
   viewValue: string;
 }
@@ -95,6 +100,11 @@ export class ColaboradoresDpComponent {
     { value: 3, viewValue: 'Paranaguá' },
   ]
 
+  situacoes: Situacoes[] = [
+    { value: 0, viewValue: 'Ativo' },
+    { value: 1, viewValue: 'Desligado' },
+  ]
+
   colaboradores: Colaboradores[] = [
     { value: 0, viewValue: 'Gustavo' },
     { value: 1, viewValue: 'João' },
@@ -104,10 +114,10 @@ export class ColaboradoresDpComponent {
     { value: 5, viewValue: 'Ítalo' },
   ]
 
-  constructor(private windowService: NbWindowService) {}
+  constructor(private dialog: MatDialog) {}
 
-  openWindow() {
-    this.windowService.open(ModalColaboradoresDpComponent, { title: `Window` });
+  openDialog() {
+    this.dialog.open(ModalColaboradoresDpComponent);
   }
-  
+
 }

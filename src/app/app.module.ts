@@ -3,14 +3,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { NbDatepickerModule, NbWindowModule } from '@nebular/theme'; // Importe o NbDatepickerModule
+import { NbContextMenuComponent, NbDatepickerModule, NbWindowModule } from '@nebular/theme'; // Importe o NbDatepickerModule
 import { MatDialogModule } from '@angular/material/dialog';
 
 import {
@@ -46,6 +46,20 @@ import { ModalMudancaDeCargoDpComponent } from './components/central-ti/modais/m
 import { ModalDesligamentoDpComponent } from './components/central-ti/modais/modais-dp/modal-desligamento-dp/modal-desligamento-dp.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { UserInfoComponent } from './components/central-ti/departamento-pessoal/templates/user-info/user-info.component';
+import { GestaoPessoalTiComponent } from './components/central-ti/departamento-ti/gestao-pessoal-ti/gestao-pessoal-ti.component';
+import { CadastroColaboradorTiComponent } from './components/central-ti/departamento-ti/gestao-pessoal-ti/tipos-de-cadastros-ti/cadastro-colaborador-ti/cadastro-colaborador-ti.component';
+import { ChamadosTiComponent } from './components/central-ti/departamento-ti/chamados-ti/chamados-ti.component';
+import { ModalColaboradoresTiComponent } from './components/central-ti/modais/modais-ti/modal-colaboradores-ti/modal-colaboradores-ti.component';
+import { ModalEditarColaboradoresTiComponent } from './components/central-ti/modais/modais-ti/modal-editar-colaboradores-ti/modal-editar-colaboradores-ti.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { VisualizarChamadosGeralComponent } from './components/central-ti/chamados/visualizar-chamados-geral/visualizar-chamados-geral.component';
+import { CriarChamadosGeralComponent } from './components/central-ti/chamados/criar-chamados-geral/criar-chamados-geral.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import { ModalVisualizarChamadosGeralComponent } from './components/central-ti/modais/modais-chamados/modal-visualizar-chamados-geral/modal-visualizar-chamados-geral.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,14 +78,22 @@ import { UserInfoComponent } from './components/central-ti/departamento-pessoal/
     ModalMudancaDeCargoDpComponent,
     ModalDesligamentoDpComponent,
     UserInfoComponent,
-    
-    
+    GestaoPessoalTiComponent,
+    CadastroColaboradorTiComponent,
+    ChamadosTiComponent,
+    ModalColaboradoresTiComponent,
+    ModalEditarColaboradoresTiComponent,
+    VisualizarChamadosGeralComponent,
+    CriarChamadosGeralComponent,
+    ModalVisualizarChamadosGeralComponent,
+        
   ],
   imports: [
     AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, BrowserModule, BrowserAnimationsModule, NbEvaIconsModule,
     NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputModule,NbLayoutModule,NbMenuModule.forRoot(),NbSelectModule,
     NbSidebarModule.forRoot(), NbStepperModule, NbThemeModule.forRoot({ name: 'default' }),NbUserModule,MatTableModule, NbContextMenuModule,
     MatPaginatorModule,NbCheckboxModule,NbDatepickerModule.forRoot(),NbWindowModule.forRoot(),MatTabsModule,MatDialogModule,
+    NbContextMenuModule,MatButtonModule,MatMenuModule,MatInputModule,MatFormFieldModule,FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

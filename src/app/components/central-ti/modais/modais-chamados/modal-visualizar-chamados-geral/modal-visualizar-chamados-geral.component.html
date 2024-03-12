@@ -1,0 +1,32 @@
+<div style="max-width: 1300px; min-width: 1100px; max-height: 640px; min-height: 550px;  background-image: url('../../../../assets/img/background6.jpg'); overflow: hidden;">
+
+    <mat-tab-group>
+      <mat-tab label="Chamado">
+        <nb-card style="height: 460px;"> <!-- Defina uma altura máxima para o card -->
+          <nb-card-body style="overflow-y: auto;"> <!-- Adicione a propriedade overflow-y -->
+            <div *ngFor="let comentario of comentarios">
+              <nb-card>
+                <nb-card-body>
+                  <app-user-info [name]="'Gustavo Bueno'" [title]="'FullStack Developer'"></app-user-info>
+                  <div>
+                    <span>{{ comentario }}</span>
+                  </div>
+                </nb-card-body>
+              </nb-card>
+            </div>
+          </nb-card-body>
+      
+          <nb-card-footer style="margin-bottom: -0px;">
+            <div style="display: flex; align-items: center;">
+              <input type="text" nbInput fullWidth class="input-comentario" fieldSize="giant" [(ngModel)]="mensagem" placeholder="Escreva sua mensagem">
+              <button style="margin-left: 20px;" nbButton status="basic" (click)="enviarMensagem()">
+                <nb-icon icon="paper-plane-outline"></nb-icon>
+            </button>
+        </div>
+        <input style="margin-top: 10px;" type="file" (change)="anexar($event)" accept=".pdf,.doc,.docx,.jpg,.png"> <!-- Adicione o input file para upload de arquivos -->
+          </nb-card-footer>
+        </nb-card>
+      </mat-tab>
+    </mat-tab-group>
+  
+</div>
