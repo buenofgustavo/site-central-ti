@@ -6,65 +6,48 @@ import { ModalColaboradoresDpComponent } from '../../modais/modais-dp/modal-cola
 import { MatDialog } from '@angular/material/dialog';
 import { ModalColaboradoresTiComponent } from '../../modais/modais-ti/modal-colaboradores-ti/modal-colaboradores-ti.component';
 import { ModalEditarColaboradoresTiComponent } from '../../modais/modais-ti/modal-editar-colaboradores-ti/modal-editar-colaboradores-ti.component';
+import { DialogExclusaoColaboradoresTiComponent } from '../../modais/modais-ti/dialog/dialog-exclusao-colaboradores-ti/dialog-exclusao-colaboradores-ti.component';
 
-interface Departamentos {
-  value: number;
-  viewValue: string;
-}
-
-interface Situacoes {
-  value: number;
-  viewValue: string;
-}
-
-interface Filiais {
-  value: number;
-  viewValue: string;
-}
-
-interface Colaboradores {
-  value: number;
-  viewValue: string;
-}
 
 interface TableColoboradores {
   cpf: string;
   nome: number;
   telefone: string;
   departamento: string;
+  nomeComputador: string;
 }
 
 const ELEMENT_DATA: TableColoboradores[] = [
-  {nome: 1, cpf: 'Hydrogen', telefone: "1.0079", departamento: 'H'},
-  {nome: 2, cpf: 'Helium', telefone: "4.0026", departamento: 'He'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
-  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li'},
+  {nome: 1, cpf: 'Hydrogen', telefone: "1.0079", departamento: 'H', nomeComputador:"a"},
+  {nome: 2, cpf: 'Helium', telefone: "4.0026", departamento: 'He', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
+  {nome: 3, cpf: 'Lithium', telefone: "6.941", departamento: 'Li', nomeComputador:"a"},
 ];
 
 
@@ -74,7 +57,7 @@ const ELEMENT_DATA: TableColoboradores[] = [
   styleUrls: ['./colaboradores-ti.component.scss']
 })
 export class ColaboradoresTiComponent {
-  displayedColumns: string[] = ['nome', 'cpf', 'telefone', 'departamento', 'acao'];
+  displayedColumns: string[] = ['nome', 'cpf', 'telefone', 'departamento', 'nomeComputador', 'acao'];
   dataSource = new MatTableDataSource<TableColoboradores>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -82,41 +65,6 @@ export class ColaboradoresTiComponent {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-  
-  departamentos: Departamentos[] = [
-    { value: 0, viewValue: 'T.I' },
-    { value: 1, viewValue: 'Jurídico' },
-    { value: 2, viewValue: 'Financeiro' },
-    { value: 3, viewValue: 'Departamento Pessoal' },
-    { value: 4, viewValue: 'Logística' },
-    { value: 5, viewValue: 'Gerenciamento de Riscos' },
-    { value: 6, viewValue: 'Ocorrências' },
-    { value: 7, viewValue: 'Manutenção' },
-    { value: 8, viewValue: 'Compras' },
-    { value: 9, viewValue: 'Comercial' },
-  ]
-  
-  filiais: Filiais[] = [
-    { value: 0, viewValue: 'Matriz' },
-    { value: 1, viewValue: 'Alexânia' },
-    { value: 2, viewValue: 'Itu' },
-    { value: 3, viewValue: 'Paranaguá' },
-  ]
-
-  situacoes: Situacoes[] = [
-    { value: 0, viewValue: 'Ativo' },
-    { value: 1, viewValue: 'Desligado' },
-  ]
-
-
-  colaboradores: Colaboradores[] = [
-    { value: 0, viewValue: 'Gustavo' },
-    { value: 1, viewValue: 'João' },
-    { value: 2, viewValue: 'Rikally' },
-    { value: 3, viewValue: 'Fabiano' },
-    { value: 4, viewValue: 'Lucas' },
-    { value: 5, viewValue: 'Ítalo' },
-  ]
 
   constructor(private dialog: MatDialog) {}
 
@@ -136,5 +84,12 @@ export class ColaboradoresTiComponent {
       // Notifique a tabela sobre a mudança na fonte de dados
       this.dataSource._updateChangeSubscription();
     }
+  }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  openConfirmacao() {
+    this.dialog.open(DialogExclusaoColaboradoresTiComponent);
   }
 }

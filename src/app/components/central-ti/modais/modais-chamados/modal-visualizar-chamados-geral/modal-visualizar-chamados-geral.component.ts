@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Inject  } from '@angular/core';
 
 @Component({
   selector: 'app-modal-visualizar-chamados-geral',
@@ -21,6 +23,12 @@ export class ModalVisualizarChamadosGeralComponent {
     if (event.target.files && event.target.files[0]) {
       this.imagemSelecionadaContrato = event.target.files[0];
     }
+  }
+
+  dados: any;
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+    this.dados = data.dados;
   }
 
 }

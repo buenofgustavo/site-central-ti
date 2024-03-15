@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogConfirmacaoCadastroComponent } from 'src/app/components/central-ti/modais/modais-dp/dialog/dialog-confirmacao-cadastro/dialog-confirmacao-cadastro.component';
+import { DialogConfirmarFeriasComponent } from 'src/app/components/central-ti/modais/modais-dp/dialog/dialog-confirmar-ferias/dialog-confirmar-ferias.component';
 
 interface Colaboradores {
   value: number;
@@ -33,5 +36,11 @@ export class CadastrarFeriasComponent {
     
     // Limpar o campo de entrada
     this.mensagem = '';
+  }
+
+  constructor(private dialog: MatDialog) {}
+
+  openConfirmar() {
+    this.dialog.open(DialogConfirmarFeriasComponent);
   }
 }

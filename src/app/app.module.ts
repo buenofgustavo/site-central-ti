@@ -29,6 +29,7 @@ import {
   NbContextMenuModule,
   NbPositionBuilderService,
   NbCheckboxModule,
+  NbToastrModule
 } from '@nebular/theme';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SolicitarCadastroComponent } from './components/central-ti/departamento-pessoal/gestao-pessoal/tipos-de-solicitacao/solicitar-cadastro/solicitar-cadastro.component';
@@ -38,7 +39,6 @@ import { ColaboradoresDpComponent } from './components/central-ti/departamento-p
 import { GestaoPessoalComponent } from './components/central-ti/departamento-pessoal/gestao-pessoal/gestao-pessoal.component';
 import { CadastrarFeriasComponent } from './components/central-ti/departamento-pessoal/gestao-pessoal/tipos-de-solicitacao/cadastrar-ferias/cadastrar-ferias.component';
 import { MudancaDeCargoComponent } from './components/central-ti/departamento-pessoal/gestao-pessoal/tipos-de-solicitacao/mudanca-de-cargo/mudanca-de-cargo.component';
-import { SolicitacoesDpComponent } from './components/central-ti/departamento-pessoal/solicitacoes-dp/solicitacoes-dp.component';
 import { ModalColaboradoresDpComponent } from './components/central-ti/modais/modais-dp/modal-colaboradores-dp/modal-colaboradores-dp.component';
 import { ModalCadastroUsuarioDpComponent } from './components/central-ti/modais/modais-dp/modal-cadastro-usuario-dp/modal-cadastro-usuario-dp.component';
 import { ModalFeriasDpComponent } from './components/central-ti/modais/modais-dp/modal-ferias-dp/modal-ferias-dp.component';
@@ -59,6 +59,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { ModalVisualizarChamadosGeralComponent } from './components/central-ti/modais/modais-chamados/modal-visualizar-chamados-geral/modal-visualizar-chamados-geral.component';
+import { ComputadoresTiComponent } from './components/central-ti/departamento-ti/computadores-ti/computadores-ti.component';
+import { ModalComputadoresTiComponent } from './components/central-ti/modais/modais-ti/modal-computadores-ti/modal-computadores-ti.component';
+import { ModalAdicionarComputadoresTiComponent } from './components/central-ti/modais/modais-ti/modal-adicionar-computadores-ti/modal-adicionar-computadores-ti.component';
+import { DesvincularComputadoresComponent } from './components/central-ti/departamento-ti/gestao-pessoal-ti/tipos-de-cadastros-ti/desvincular-computadores/desvincular-computadores.component';
+import { DialogConfirmacaoCadastroComponent } from './components/central-ti/modais/modais-dp/dialog/dialog-confirmacao-cadastro/dialog-confirmacao-cadastro.component';
+import { DialogConfirmarFeriasComponent } from './components/central-ti/modais/modais-dp/dialog/dialog-confirmar-ferias/dialog-confirmar-ferias.component';
+import { DialogConfirmarDesligamentoComponent } from './components/central-ti/modais/modais-dp/dialog/dialog-confirmar-desligamento/dialog-confirmar-desligamento.component';
+import { DialogMudancaCargoComponent } from './components/central-ti/modais/modais-dp/dialog/dialog-mudanca-cargo/dialog-mudanca-cargo.component';
+import { DialogExclusaoChamadosTiComponent } from './components/central-ti/modais/modais-ti/dialog/dialog-exclusao-chamados-ti/dialog-exclusao-chamados-ti.component';
+import { DialogExclusaoColaboradoresTiComponent } from './components/central-ti/modais/modais-ti/dialog/dialog-exclusao-colaboradores-ti/dialog-exclusao-colaboradores-ti.component';
+import { DialogExclusaoComputadoresTiComponent } from './components/central-ti/modais/modais-ti/dialog/dialog-exclusao-computadores-ti/dialog-exclusao-computadores-ti.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +82,6 @@ import { ModalVisualizarChamadosGeralComponent } from './components/central-ti/m
     GestaoPessoalComponent,
     CadastrarFeriasComponent,
     MudancaDeCargoComponent,
-    SolicitacoesDpComponent,
     ModalColaboradoresDpComponent,
     ModalCadastroUsuarioDpComponent,
     ModalFeriasDpComponent,
@@ -86,6 +96,17 @@ import { ModalVisualizarChamadosGeralComponent } from './components/central-ti/m
     VisualizarChamadosGeralComponent,
     CriarChamadosGeralComponent,
     ModalVisualizarChamadosGeralComponent,
+    ComputadoresTiComponent,
+    ModalComputadoresTiComponent,
+    ModalAdicionarComputadoresTiComponent,
+    DesvincularComputadoresComponent,
+    DialogConfirmacaoCadastroComponent,
+    DialogConfirmarFeriasComponent,
+    DialogConfirmarDesligamentoComponent,
+    DialogMudancaCargoComponent,
+    DialogExclusaoChamadosTiComponent,
+    DialogExclusaoColaboradoresTiComponent,
+    DialogExclusaoComputadoresTiComponent,
         
   ],
   imports: [
@@ -93,7 +114,7 @@ import { ModalVisualizarChamadosGeralComponent } from './components/central-ti/m
     NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputModule,NbLayoutModule,NbMenuModule.forRoot(),NbSelectModule,
     NbSidebarModule.forRoot(), NbStepperModule, NbThemeModule.forRoot({ name: 'default' }),NbUserModule,MatTableModule, NbContextMenuModule,
     MatPaginatorModule,NbCheckboxModule,NbDatepickerModule.forRoot(),NbWindowModule.forRoot(),MatTabsModule,MatDialogModule,
-    NbContextMenuModule,MatButtonModule,MatMenuModule,MatInputModule,MatFormFieldModule,FormsModule,
+    NbContextMenuModule,MatButtonModule,MatMenuModule,MatInputModule,MatFormFieldModule,FormsModule,NbToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

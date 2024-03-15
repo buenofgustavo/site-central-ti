@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { NbDialogService } from '@nebular/theme';
+import { DialogConfirmacaoCadastroComponent } from 'src/app/components/central-ti/modais/modais-dp/dialog/dialog-confirmacao-cadastro/dialog-confirmacao-cadastro.component';
+import { MatDialog } from '@angular/material/dialog';
 
 interface Departamentos {
   value: number;
@@ -63,4 +66,11 @@ export class SolicitarCadastroComponent {
       this.imagemSelecionadaContrato = event.target.files[0];
     }
   }
+
+  constructor(private dialog: MatDialog) {}
+
+  openConfirmar() {
+    this.dialog.open(DialogConfirmacaoCadastroComponent);
+  }
+
 }

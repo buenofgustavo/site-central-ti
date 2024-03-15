@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogMudancaCargoComponent } from 'src/app/components/central-ti/modais/modais-dp/dialog/dialog-mudanca-cargo/dialog-mudanca-cargo.component';
 
 interface Colaboradores {
   value: number;
@@ -29,5 +31,10 @@ export class SolicitarDesligamentoComponent {
     
     // Limpar o campo de entrada
     this.mensagem = '';
+  }
+  constructor(private dialog: MatDialog) {}
+
+  openConfirmar() {
+    this.dialog.open(DialogMudancaCargoComponent);
   }
 }

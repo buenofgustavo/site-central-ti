@@ -1,0 +1,93 @@
+
+<div style="max-width: 780px; min-width: 780px; max-height: 448px; min-height: 448px;  background-color: white; margin-top: 20px;  margin-left: 190px;">
+
+    <mat-tab-group>
+        <mat-tab label="Cadastro de Usuário">
+            <div style="margin-bottom: 18px; margin-top: 10px;">
+      
+      
+                <form class="form-grid">
+                  <div class="center-content" style="margin-top: 4rem;">
+                    <nb-form-field style="flex: 1;">
+                        <label for="filial">Colaboradores</label>
+                        <nb-select placeholder="" name="perfis">
+                            <nb-option value="">Nenhum</nb-option>
+                            <nb-option *ngFor="let colaborador of colaboradores" [value]="colaborador.value">
+                                {{colaborador.viewValue}}
+                            </nb-option>
+                        </nb-select>
+                    </nb-form-field>
+                  </div>
+                </form>
+      
+              </div>
+         
+          </mat-tab>
+
+      <mat-tab label="Computador">
+
+        <div style=" margin-left: 52px;">
+  
+            <form class="form-grid">
+                <div class="center-content" style="margin-top: 5px;">
+                  <nb-form-field style="flex: 1;">
+                    <label for="nome_do_computador">Nome do Computador</label>
+                    <input class="todos-inputs" id="nome_do_computador" nbInput name="nome_do_computador">
+                  </nb-form-field>
+                  <button style="margin-left: 18px; margin-top: 33px;" class="" nbButton>Desvincular</button>
+                </div>
+            </form>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="nomeUsuario">Nome de Usuário</label>
+                  <input disabled class="todos-inputs" id="nomeUsuario" nbInput name="nomeUsuario">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="enderecoMAC">MAC</label>
+                  <input disabled class="todos-inputs" id="enderecoMAC" nbInput placeholder="" name="enderecoMAC">
+                </nb-form-field>
+            </div>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="marca">Marca</label>
+                  <input disabled class="todos-inputs" id="marca" nbInput name="marca">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="modelo">Modelo</label>
+                  <input disabled class="todos-inputs" id="modelo" nbInput placeholder="" name="modelo">
+                </nb-form-field>
+            </div>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="RAM">RAM</label>
+                  <input disabled class="todos-inputs" id="RAM" nbInput name="RAM">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="armazenamento">Armazenamento</label>
+                  <input disabled class="todos-inputs" id="armazenamento" nbInput placeholder="" name="armazenamento">
+                </nb-form-field>
+            </div>
+
+            <div class="center-content">
+                <nb-form-field>
+                  <label for="MAKRO">MAKRO</label>
+                  <input disabled class="todos-inputs" id="MAKRO" nbInput name="MAKRO">
+                </nb-form-field>
+            </div>
+
+    
+        </div>
+
+      </mat-tab>
+
+
+
+
+    </mat-tab-group>
+  
+  </div>
+  
+  

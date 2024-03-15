@@ -1,0 +1,72 @@
+<div>
+
+    <label for="buscas">Buscas: </label>
+    <input nbInput (keyup)="applyFilter($event)" placeholder="Ex. '123'" #input
+    style="margin-bottom:3rem; background-color: #ffffff; border: 1px solid #e2dfdf; height: 2.5rem; width: 55rem;"
+    class="mat-elevation-z1">
+
+    <button (click)="openAdicionarComputadores()" style="margin-left: 50rem; margin-top: 0px; border-radius: 50%; box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);" nbButton status="basic">
+        <nb-icon icon="plus-outline"></nb-icon>
+    </button>
+
+</div>
+  
+  
+  <div style="margin-top: 0px; margin-bottom: 40px;">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Nome Column -->
+      <ng-container matColumnDef="nomeUsuario">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nome de Usuário </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.nomeUsuario}} </td>
+      </ng-container>
+  
+      <!-- CPF Column -->
+      <ng-container matColumnDef="nomeComputador">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nome do Computador </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.nomeComputador}} </td>
+      </ng-container>
+  
+      <!-- Telefone Column -->
+      <ng-container matColumnDef="mac">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> MAC </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.mac}} </td>
+      </ng-container>
+  
+      <!-- Departamento Column -->
+      <ng-container matColumnDef="marca">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Marca </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.marca}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="modelo">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Modelo </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.modelo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Status </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.status}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="acao">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Ações </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">
+          <button mat-button [matMenuTriggerFor]="menu"><nb-icon icon="more-vertical-outline"></nb-icon></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openComputadores()"><nb-icon icon="eye-outline"></nb-icon>  Visualizar</button>
+            <button mat-menu-item (click)="openConfirmacao()"><nb-icon icon="trash-2-outline"></nb-icon>  Excluir</button>
+          </mat-menu>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page">
+    </mat-paginator>
+  </div>
+  

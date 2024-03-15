@@ -5,26 +5,6 @@ import {MatTableDataSource} from '@angular/material/table';
 import { ModalColaboradoresDpComponent } from '../../modais/modais-dp/modal-colaboradores-dp/modal-colaboradores-dp.component';
 import { MatDialog } from '@angular/material/dialog';
 
-interface Departamentos {
-  value: number;
-  viewValue: string;
-}
-
-interface Filiais {
-  value: number;
-  viewValue: string;
-}
-
-interface Situacoes {
-  value: number;
-  viewValue: string;
-}
-
-interface Colaboradores {
-  value: number;
-  viewValue: string;
-}
-
 interface TableColoboradores {
   cpf: string;
   nome: number;
@@ -80,44 +60,14 @@ export class ColaboradoresDpComponent {
     this.dataSource.paginator = this.paginator;
   }
   
-  departamentos: Departamentos[] = [
-    { value: 0, viewValue: 'T.I' },
-    { value: 1, viewValue: 'Jurídico' },
-    { value: 2, viewValue: 'Financeiro' },
-    { value: 3, viewValue: 'Departamento Pessoal' },
-    { value: 4, viewValue: 'Logística' },
-    { value: 5, viewValue: 'Gerenciamento de Riscos' },
-    { value: 6, viewValue: 'Ocorrências' },
-    { value: 7, viewValue: 'Manutenção' },
-    { value: 8, viewValue: 'Compras' },
-    { value: 9, viewValue: 'Comercial' },
-  ]
-  
-  filiais: Filiais[] = [
-    { value: 0, viewValue: 'Matriz' },
-    { value: 1, viewValue: 'Alexânia' },
-    { value: 2, viewValue: 'Itu' },
-    { value: 3, viewValue: 'Paranaguá' },
-  ]
-
-  situacoes: Situacoes[] = [
-    { value: 0, viewValue: 'Ativo' },
-    { value: 1, viewValue: 'Desligado' },
-  ]
-
-  colaboradores: Colaboradores[] = [
-    { value: 0, viewValue: 'Gustavo' },
-    { value: 1, viewValue: 'João' },
-    { value: 2, viewValue: 'Rikally' },
-    { value: 3, viewValue: 'Fabiano' },
-    { value: 4, viewValue: 'Lucas' },
-    { value: 5, viewValue: 'Ítalo' },
-  ]
-
   constructor(private dialog: MatDialog) {}
 
   openDialog() {
     this.dialog.open(ModalColaboradoresDpComponent);
   }
-
+  
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

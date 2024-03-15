@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogConfirmarDesligamentoComponent } from 'src/app/components/central-ti/modais/modais-dp/dialog/dialog-confirmar-desligamento/dialog-confirmar-desligamento.component';
+import { DialogMudancaCargoComponent } from 'src/app/components/central-ti/modais/modais-dp/dialog/dialog-mudanca-cargo/dialog-mudanca-cargo.component';
 
 interface Departamentos {
   value: number;
@@ -60,4 +63,10 @@ export class MudancaDeCargoComponent {
     // Limpar o campo de entrada
     this.mensagem = '';
   }
+  constructor(private dialog: MatDialog) {}
+
+  openConfirmar() {
+    this.dialog.open(DialogMudancaCargoComponent);
+  }
 }
+

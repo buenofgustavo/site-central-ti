@@ -18,12 +18,12 @@
       
           <nb-card-footer style="margin-bottom: -0px;">
             <div style="display: flex; align-items: center;">
-              <input type="text" nbInput fullWidth class="input-comentario" fieldSize="giant" [(ngModel)]="mensagem" placeholder="Escreva sua mensagem">
-              <button style="margin-left: 20px;" nbButton status="basic" (click)="enviarMensagem()">
+              <input  [disabled]="dados.status !== 'Em Aberto'"  type="text" nbInput fullWidth class="input-comentario" fieldSize="giant" [(ngModel)]="mensagem" placeholder="Escreva sua mensagem">
+              <button  [disabled]="dados.status !== 'Em Aberto'"  style="margin-left: 20px;" nbButton status="basic" (click)="enviarMensagem()">
                 <nb-icon icon="paper-plane-outline"></nb-icon>
             </button>
         </div>
-        <input style="margin-top: 10px;" type="file" (change)="anexar($event)" accept=".pdf,.doc,.docx,.jpg,.png"> <!-- Adicione o input file para upload de arquivos -->
+        <input  [disabled]="dados.status !== 'Em Aberto'"  style="margin-top: 10px;" type="file" (change)="anexar($event)" accept=".pdf,.doc,.docx,.jpg,.png"> <!-- Adicione o input file para upload de arquivos -->
           </nb-card-footer>
         </nb-card>
       </mat-tab>

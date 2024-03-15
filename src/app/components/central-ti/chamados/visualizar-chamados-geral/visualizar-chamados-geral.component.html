@@ -1,46 +1,16 @@
 <div style="display: flex;">
 
-
-
-  <nb-form-field class="form-field">
-    <label for="tipo">Tipo</label>
-    <nb-select for="tipo" placeholder="" name="perfis">
-      <nb-option value="">Nenhum</nb-option>
-      <nb-option *ngFor="let tipo of tipos" [value]="tipo.value" >
-        {{tipo.viewValue}}
-      </nb-option>
-    </nb-select>
-  </nb-form-field>
-
-
-  <nb-form-field class="form-field">
-    <label for="status">Status</label>
-    <nb-select for="status" placeholder="" name="perfis">
-      <nb-option value="">Nenhum</nb-option>
-      <nb-option *ngFor="let status of Status" [value]="status.value" >
-        {{status.viewValue}}
-      </nb-option>
-    </nb-select>
-  </nb-form-field>
-
-  <div class="center-content form-field">
-    <nb-form-field style="flex: 1;">
-        <label for="filial">Colaboradores</label>
-        <nb-select placeholder="" name="perfis">
-            <nb-option value="">Nenhum</nb-option>
-            <nb-option *ngFor="let colaborador of colaboradores" [value]="colaborador.value">
-                {{colaborador.viewValue}}
-            </nb-option>
-        </nb-select>
-    </nb-form-field>
-</div>
-
-<button nbButton class="botao-search" ><nb-icon icon="search"></nb-icon></button>
+  <div>
+    <label for="buscas">Buscas: </label>
+    <input nbInput (keyup)="applyFilter($event)" placeholder="Ex. '123'" #input
+    style="margin-bottom:3rem; background-color: #ffffff; border: 1px solid #e2dfdf; height: 2.5rem; width: 55rem;"
+    class="mat-elevation-z1">
+  </div>
 
 </div>
 
 
-<div style="margin-top: 40px; margin-bottom: 40px;">
+<div style="margin-top: 0px; margin-bottom: 40px;">
 <table mat-table [dataSource]="dataSource">
 
   <!-- Nome Column -->
@@ -73,7 +43,7 @@
       <button mat-button [matMenuTriggerFor]="menu"><nb-icon icon="more-vertical-outline"></nb-icon></button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="openDialog(element)"><nb-icon icon="eye-outline"></nb-icon>  Visualizar</button>
-        <button mat-menu-item (click)="deleteRow(element)"><nb-icon icon="trash-2-outline"></nb-icon>  Excluir</button>
+        <button mat-menu-item (click)="deleteRow(element)"><nb-icon icon="close-outline"></nb-icon>  Cancelar</button>
       </mat-menu>
 
   </td>

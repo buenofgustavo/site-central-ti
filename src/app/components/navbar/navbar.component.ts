@@ -21,7 +21,6 @@ export class NavbarComponent {
       icon: '',
       children: [
         {title: 'Gestão Pessoal',icon: '',link: '/gestao-pessoal'},
-        {title: 'Solicitações',icon: '',link: '/chamados-dp',},
         {title: 'Colaboradores',icon: '',link: '/colaboradores-dp',},
       ]
     },
@@ -33,6 +32,7 @@ export class NavbarComponent {
         {title: 'Gestão Pessoal',icon: '',link: '/gestao-pessoal-ti'},
         {title: 'Chamados',icon: '',link: '/chamados-ti'},
         {title: 'Colaboradores',icon: '',link: '/colaboradores-ti',},
+        {title: 'Computadores',icon: '',link: '/computadores-ti',},
       ]
     },
     

@@ -1,0 +1,100 @@
+<div style="max-width: 780px; min-width: 780px; max-height: 650px; min-height: 650px;  background-color: white; overflow: hidden;">
+
+    <mat-tab-group>
+
+      <mat-tab label="Computador">
+
+        <div style=" margin-left: 52px;">
+  
+            <form class="form-grid">
+
+                <div class="div-cadastro"  style="margin-top: 5px;">
+
+                  <nb-form-field >
+                    <label for="nome_do_computador">Nome do Computador</label>
+                    <input disabled class="todos-inputs" id="nome_do_computador" nbInput name="nome_do_computador">
+                  </nb-form-field>
+                  <nb-form-field>
+                      <label for="status">Status</label>
+                      <nb-select   class="todos-inputs" name="status" placeholder="" [(selected)]="selectedItemCategoria">
+                        <nb-option value="2">Com defeito</nb-option>
+                    </nb-select>
+                </nb-form-field>
+
+                </div>
+            </form>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="nomeUsuario">Nome de Usuário</label>
+                  <input disabled class="todos-inputs" id="nomeUsuario" nbInput name="nomeUsuario">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="enderecoMAC">MAC</label>
+                  <input disabled class="todos-inputs" id="enderecoMAC" nbInput placeholder="" name="enderecoMAC">
+                </nb-form-field>
+            </div>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="marca">Marca</label>
+                  <input disabled class="todos-inputs" id="marca" nbInput name="marca">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="modelo">Modelo</label>
+                  <input disabled class="todos-inputs" id="modelo" nbInput placeholder="" name="modelo">
+                </nb-form-field>
+            </div>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="RAM">RAM</label>
+                  <input disabled class="todos-inputs" id="RAM" nbInput name="RAM">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="armazenamento">Armazenamento</label>
+                  <input disabled class="todos-inputs" id="armazenamento" nbInput placeholder="" name="armazenamento">
+                </nb-form-field>
+            </div>
+
+            <div class="div-cadastro">
+                <nb-form-field>
+                    <label for="processador">Processador</label>
+                    <input disabled class="todos-inputs" id="processador" nbInput name="processador">
+                  </nb-form-field>
+                <nb-form-field>
+                  <label for="Localizacao">Localização</label>
+                  <input disabled class="todos-inputs" id="Localizacao" nbInput name="Localizacao">
+                </nb-form-field>
+
+            </div>
+            <div class="div-cadastro">
+                <nb-form-field>
+                  <label for="makro">Makro</label>
+                  <input disabled class="todos-inputs" id="makro" nbInput name="makro">
+                </nb-form-field>
+                <nb-form-field>
+                  <label for="versao_makro">Versão Makro</label>
+                  <input disabled class="todos-inputs" id="versao_makro" nbInput placeholder="" name="versao_makro">
+                </nb-form-field>
+            </div>
+    
+            <div class="div-cadastro">
+
+                <nb-form-field>
+                  <label for="sistema_operacional">Sistema Operacional</label>
+                  <input disabled class="todos-inputs" id="sistema_operacional" nbInput placeholder="" name="sistema_operacional">
+                </nb-form-field>
+                <nb-form-field>
+                    <label for="ultima_requisicao">Última Requisição</label>
+                    <input disabled class="todos-inputs" id="ultima_requisicao" nbInput placeholder="" name="ultima_requisicao">
+                  </nb-form-field>
+            </div>
+
+        </div>
+
+      </mat-tab>
+
+    </mat-tab-group>
+  
+  </div>

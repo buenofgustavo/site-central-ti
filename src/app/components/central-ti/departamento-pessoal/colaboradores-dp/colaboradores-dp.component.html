@@ -1,54 +1,16 @@
 <div style="display: flex;">
 
-  <div class="center-content form-field">
-    <nb-form-field style="flex: 1;">
-        <label for="filial">Colaboradores</label>
-        <nb-select placeholder="" name="perfis">
-            <nb-option value="">Nenhum</nb-option>
-            <nb-option *ngFor="let colaborador of colaboradores" [value]="colaborador.value">
-                {{colaborador.viewValue}}
-            </nb-option>
-        </nb-select>
-    </nb-form-field>
+  <div>
+    <label for="buscas">Buscas: </label>
+    <input nbInput (keyup)="applyFilter($event)" placeholder="Ex. '123'" #input
+    style="margin-bottom:3rem; background-color: #ffffff; border: 1px solid #e2dfdf; height: 2.5rem; width: 55rem;"
+    class="mat-elevation-z1">
   </div>
-
-    <nb-form-field class="form-field">
-      <label for="departamento">Departamento</label>
-      <nb-select placeholder="" name="perfis">
-        <nb-option value="">Nenhum</nb-option>
-        <nb-option *ngFor="let departamento of departamentos" [value]="departamento.value" >
-          {{departamento.viewValue}}
-        </nb-option>
-      </nb-select>
-    </nb-form-field>
-
-    <nb-form-field class="form-field">
-      <label for="filial">Filial</label>
-      <nb-select placeholder="" name="perfis">
-        <nb-option value="">Nenhum</nb-option>
-        <nb-option *ngFor="let filial of filiais" [value]="filial.value" >
-          {{filial.viewValue}}
-        </nb-option>
-      </nb-select>
-    </nb-form-field>
-
-    <nb-form-field class="form-field">
-      <label for="situacao">Situação</label>
-      <nb-select placeholder="" name="situacao">
-        <nb-option value="">Nenhum</nb-option>
-        <nb-option *ngFor="let situacao of situacoes" [value]="situacao.value" >
-          {{situacao.viewValue}}
-        </nb-option>
-      </nb-select>
-    </nb-form-field>
-
-
-  <button nbButton class="botao-search" ><nb-icon icon="search"></nb-icon></button>
 
 </div>
 
 
-<div style="margin-top: 40px; margin-bottom: 40px;">
+<div style="margin-top: 0px; margin-bottom: 40px;">
   <table mat-table [dataSource]="dataSource">
 
     <!-- Nome Column -->

@@ -1,25 +1,15 @@
 import { Component } from '@angular/core';
 
-import {AfterViewInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import { ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { NbWindowService } from '@nebular/theme';
+import {ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+
 import { ModalCadastroUsuarioDpComponent } from '../../modais/modais-dp/modal-cadastro-usuario-dp/modal-cadastro-usuario-dp.component';
 import { ModalFeriasDpComponent } from '../../modais/modais-dp/modal-ferias-dp/modal-ferias-dp.component';
 import { ModalDesligamentoDpComponent } from '../../modais/modais-dp/modal-desligamento-dp/modal-desligamento-dp.component';
 import { ModalMudancaDeCargoDpComponent } from '../../modais/modais-dp/modal-mudanca-de-cargo-dp/modal-mudanca-de-cargo-dp.component';
-import { NbWindowConfig } from '@nebular/theme';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalVisualizarChamadosGeralComponent } from '../../modais/modais-chamados/modal-visualizar-chamados-geral/modal-visualizar-chamados-geral.component';
-
-
-
-
-interface STATUS {
-  value: number;
-  viewValue: string;
-}
 
 interface TableColoboradores {
   tipo: string;
@@ -27,17 +17,6 @@ interface TableColoboradores {
   data_abertura: string;
   requerente: string;
 }
-
-interface Colaboradores {
-  value: number;
-  viewValue: string;
-}
-
-interface Tipos {
-  value: number;
-  viewValue: string;
-}
-
 
 const ELEMENT_DATA: TableColoboradores[] = [
   {tipo: 'Relatórios', status: 'Lithium', data_abertura: "1.0079", requerente: 'H'},
@@ -63,29 +42,6 @@ export class VisualizarChamadosGeralComponent {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-  
-  Status: STATUS[] = [
-    { value: 0, viewValue: 'Em Aberto' },
-    { value: 1, viewValue: 'Em Andamento' },
-    { value: 2, viewValue: 'Concluído' },
-    { value: 3, viewValue: 'Fechado' },
-  ];
-
-  tipos: Tipos[] = [
-    { value: 0, viewValue: 'Cadastro de Usuário' },
-    { value: 1, viewValue: 'Férias' },
-    { value: 2, viewValue: 'Desligamento' },
-    { value: 3, viewValue: 'Mudança de Cargo' },
-  ];
-  
-  colaboradores: Colaboradores[] = [
-    { value: 0, viewValue: 'Gustavo' },
-    { value: 1, viewValue: 'João' },
-    { value: 2, viewValue: 'Rikally' },
-    { value: 3, viewValue: 'Fabiano' },
-    { value: 4, viewValue: 'Lucas' },
-    { value: 5, viewValue: 'Ítalo' },
-  ]
 
   openDialog(element: any) {
     const tipo = element.tipo;
@@ -138,4 +94,10 @@ export class VisualizarChamadosGeralComponent {
       this.dataSource._updateChangeSubscription();
     }
   }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
 }

@@ -23,4 +23,5 @@ export class ModalCadastroUsuarioDpComponent{
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     this.dados = data.dados;
   }
+  
 }
