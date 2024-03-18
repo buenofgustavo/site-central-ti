@@ -43,4 +43,5 @@ export class CadastrarFeriasComponent {
   openConfirmar() {
     this.dialog.open(DialogConfirmarFeriasComponent);
   }
+  
 }
