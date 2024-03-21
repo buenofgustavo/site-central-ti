@@ -12,4 +12,5 @@ export class ModalAdicionarComputadoresTiComponent {
       this.imagemSelecionada = event.target.files[0];
     }
   }
+  selectedItemCategoria = 0
 }

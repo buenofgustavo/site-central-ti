@@ -37,7 +37,7 @@ export class CadastrarFeriasComponent {
     // Limpar o campo de entrada
     this.mensagem = '';
   }
-
+    
   constructor(private dialog: MatDialog) {}
 
   openConfirmar() {

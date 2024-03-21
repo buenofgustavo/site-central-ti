@@ -27,6 +27,7 @@ import { ModalComputadoresTiComponent } from './components/central-ti/modais/mod
 import { ModalAdicionarComputadoresTiComponent } from './components/central-ti/modais/modais-ti/modal-adicionar-computadores-ti/modal-adicionar-computadores-ti.component';
 import { DesvincularComputadoresComponent } from './components/central-ti/departamento-ti/gestao-pessoal-ti/tipos-de-cadastros-ti/desvincular-computadores/desvincular-computadores.component';
 import { DialogConfirmacaoCadastroComponent } from './components/central-ti/modais/modais-dp/dialog/dialog-confirmacao-cadastro/dialog-confirmacao-cadastro.component';
+import { CadastrarUsuarioComponent } from './components/central-ti/cadastrar-usuario/cadastrar-usuario.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
     path: '', component: NavbarComponent,
     children: [
       {path: 'gestao-pessoal', component: GestaoPessoalComponent},
+      {path: 'cadastrar-usuario', component: CadastrarUsuarioComponent},
       {path: 'gestao-pessoal-ti', component: GestaoPessoalTiComponent},
       {path: 'cadastrar-ferias', component: CadastrarFeriasComponent},
       {path: 'mudanca-de-cargo', component: MudancaDeCargoComponent},

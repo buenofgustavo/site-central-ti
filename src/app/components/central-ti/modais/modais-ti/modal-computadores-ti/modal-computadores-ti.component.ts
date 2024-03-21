@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./modal-computadores-ti.component.scss']
 })
 export class ModalComputadoresTiComponent {
-  selectedItemCategoria = 0
+
 }

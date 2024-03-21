@@ -70,6 +70,7 @@ import { DialogMudancaCargoComponent } from './components/central-ti/modais/moda
 import { DialogExclusaoChamadosTiComponent } from './components/central-ti/modais/modais-ti/dialog/dialog-exclusao-chamados-ti/dialog-exclusao-chamados-ti.component';
 import { DialogExclusaoColaboradoresTiComponent } from './components/central-ti/modais/modais-ti/dialog/dialog-exclusao-colaboradores-ti/dialog-exclusao-colaboradores-ti.component';
 import { DialogExclusaoComputadoresTiComponent } from './components/central-ti/modais/modais-ti/dialog/dialog-exclusao-computadores-ti/dialog-exclusao-computadores-ti.component';
+import { CadastrarUsuarioComponent } from './components/central-ti/cadastrar-usuario/cadastrar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { DialogExclusaoComputadoresTiComponent } from './components/central-ti/m
     DialogExclusaoChamadosTiComponent,
     DialogExclusaoColaboradoresTiComponent,
     DialogExclusaoComputadoresTiComponent,
+    CadastrarUsuarioComponent,
         
   ],
   imports: [

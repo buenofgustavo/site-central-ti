@@ -44,7 +44,10 @@ export class NavbarComponent {
         {title: 'Visualizar Chamados',icon: '',link: '/visualizar-chamados-geral'},
       ]
     },
-
+    {
+      title: 'Cadastrar Usuários',
+      link:"/cadastrar-usuario"
+    },
   ];
   
   items2 = [
